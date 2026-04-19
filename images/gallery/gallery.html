@@ -1,20 +1,119 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Galerie Foto | VIP Events</title>
+
+<meta name="description" content="Galerie foto evenimente VIP Events Solutions - DJ, cabina foto, momente reale.">
+<meta name="robots" content="index, follow">
+
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#111;
+  color:#fff;
+}
+
+header {
+  text-align:center;
+  padding:40px 20px;
+}
+
+.gallery {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:10px;
+  padding:10px;
+}
+
+.gallery img {
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.gallery img:hover {
+  transform:scale(1.05);
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  display:none;
+  justify-content:center;
+  align-items:center;
+}
+
+.lightbox img {
+  max-width:90%;
+  max-height:90%;
+}
+
+.lightbox.active {
+  display:flex;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+  <h1>Galerie Evenimente</h1>
+  <p>Momente reale • Emoții • Distracție</p>
+</header>
+
+<div class="gallery" id="gallery"></div>
+
+<div class="lightbox" id="lightbox">
+  <img src="" id="lightbox-img">
+</div>
+
 <script>
 
-const params = new URLSearchParams(window.location.search);
-const type = params.get("type");
+// 🔥 ADAUGI DOAR NUMELE POZELOR AICI
+const images = [
+  "preview1.png",
+  "img2.jpg",
+  "img3.jpg",
+  "img4.jpg",
+  "img5.jpg",
+  "img6.jpg"
+];
 
-fetch(type + '.json')
-.then(res => res.json())
-.then(data => {
+const gallery = document.getElementById("gallery");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
 
-  const gallery = document.getElementById("gallery");
+// GENERARE AUTOMATĂ
+images.forEach(img => {
+  const image = document.createElement("img");
+  image.src = "images/gallery/" + img;
 
-  data.images.forEach(img => {
-    const image = document.createElement("img");
-    image.src = "images/" + type + "/" + img;
-    gallery.appendChild(image);
-  });
+  image.onclick = () => {
+    lightbox.classList.add("active");
+    lightboxImg.src = image.src;
+  };
 
+  gallery.appendChild(image);
 });
 
+// ÎNCHIDERE LIGHTBOX
+lightbox.onclick = () => {
+  lightbox.classList.remove("active");
+};
+
 </script>
+
+</body>
+</html>
