@@ -1,0 +1,20 @@
+<script>
+
+const params = new URLSearchParams(window.location.search);
+const type = params.get("type");
+
+fetch(type + '.json')
+.then(res => res.json())
+.then(data => {
+
+  const gallery = document.getElementById("gallery");
+
+  data.images.forEach(img => {
+    const image = document.createElement("img");
+    image.src = "images/" + type + "/" + img;
+    gallery.appendChild(image);
+  });
+
+});
+
+</script>
