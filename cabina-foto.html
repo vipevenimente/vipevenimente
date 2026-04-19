@@ -1,187 +1,85 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Cabină Foto Nuntă | Photobooth Evenimente VIP Events</title>
-
-  <meta name="description" content="Cabină foto pentru nunți și evenimente. Pachete 4h, 6h, 8h cu fotografii nelimitate, accesorii și distracție garantată.">
-
-  <meta name="keywords" content="cabina foto nunta, photobooth evenimente, cabina foto pret, cabina foto bucuresti">
-
-  <meta name="robots" content="index, follow">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cabina Foto</title>
 
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin:0;
-      background:#fff;
-      color:#333;
-    }
-
-    header {
-      background:#111;
-      color:#fff;
-      text-align:center;
-      padding:50px 20px;
-    }
-
-    section {
-      max-width:1100px;
-      margin:auto;
-      padding:40px 20px;
-    }
-
-    h2 {
-      text-align:center;
-      margin-bottom:20px;
-    }
-
-    .pricing {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:20px;
-    }
-
-    .card {
-      border:1px solid #eee;
-      border-radius:10px;
-      overflow:hidden;
-      background:#fff;
-      transition:0.2s;
-    }
-
-    .card:hover {
-      transform:scale(1.03);
-    }
-
-    .card img {
-      width:100%;
-      height:220px;
-      object-fit:cover;
-    }
-
-    .card-content {
-      padding:20px;
-    }
-
-    .price {
-      font-size:22px;
-      color:#007bff;
-      font-weight:bold;
+      font-family: Arial;
+      text-align: center;
+      background: #111;
+      color: white;
     }
 
     .gallery {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:20px;
-      margin-top:30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
     }
 
     .gallery img {
-      width:100%;
-      height:auto;
-      border-radius:10px;
-      box-shadow:0 5px 15px rgba(0,0,0,0.2);
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid #fff;
     }
 
-    footer {
-      background:#111;
-      color:#fff;
-      text-align:center;
-      padding:20px;
-      margin-top:40px;
+    video {
+      width: 300px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      cursor: pointer;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Cabină Foto Evenimente</h1>
-  <p>Distracție instant • Amintiri pe loc • Photobooth profesional</p>
-</header>
+  <h1>Cabina Foto 📸</h1>
 
-<!-- PACHETE -->
-<section>
+  <video id="video" autoplay></video>
+  <br/>
+  <button onclick="capture()">Fă poză</button>
 
-  <h2>Pachete Cabină Foto</h2>
+  <div class="gallery" id="gallery"></div>
 
-  <div class="pricing">
+  <script>
+    const video = document.getElementById("video");
+    const gallery = document.getElementById("gallery");
 
-    <!-- 4 ORE -->
-    <div class="card">
-      <img src="images/photobooth-main.png" alt="cabina foto photobooth eveniment">
-      <div class="card-content">
-        <h3>4 ore</h3>
-        <p class="price">1300 lei</p>
-        <ul>
-          <li>Fotografii nelimitate</li>
-          <li>Fundal argintiu</li>
-          <li>Template personalizat</li>
-          <li>Plicuri incluse</li>
-          <li>Guest book</li>
-          <li>Stocare cloud live</li>
-        </ul>
-      </div>
-    </div>
+    // pornire cameră
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => {
+        video.srcObject = stream;
+      })
+      .catch(err => {
+        console.error("Camera nu poate fi accesată:", err);
+      });
 
-    <!-- 6 ORE -->
-    <div class="card">
-      <img src="images/photobooth-main.png" alt="cabina foto photobooth eveniment">
-      <div class="card-content">
-        <h3>6 ore</h3>
-        <p class="price">1600 lei</p>
-        <ul>
-          <li>Fotografii nelimitate</li>
-          <li>Accesorii amuzante</li>
-          <li>Fundal premium</li>
-          <li>Guest book</li>
-          <li>Cloud instant</li>
-        </ul>
-      </div>
-    </div>
+    function capture() {
+      const canvas = document.createElement("canvas");
+      canvas.width = 300;
+      canvas.height = 300;
 
-    <!-- 8 ORE -->
-    <div class="card">
-      <img src="images/photobooth-main.png" alt="cabina foto photobooth eveniment">
-      <div class="card-content">
-        <h3>8 ore</h3>
-        <p class="price">2000 lei</p>
-        <ul>
-          <li>Distracție nelimitată</li>
-          <li>Accesorii complete</li>
-          <li>Experiență premium</li>
-          <li>Upload cloud</li>
-        </ul>
-      </div>
-    </div>
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-  </div>
+      const img = document.createElement("img");
+      img.src = canvas.toDataURL("image/png");
 
-</section>
-
-<!-- GALERIE REALĂ -->
-<section>
-
-  <h2>Momente cabina foto</h2>
-
-  <div class="gallery">
-
-    <img src="images/template1.png" alt="template cabina foto nunta 1">
-
-    <img src="images/template2.png" alt="template cabina foto nunta 2">
-
-    <img src="images/template3.png" alt="template cabina foto nunta 3">
-
-  </div>
-
-</section>
-
-<footer>
-  © 2026 VIP Events Solutions SRL
-</footer>
+      gallery.appendChild(img);
+    }
+  </script>
 
 </body>
 </html>
