@@ -46,17 +46,6 @@ header {
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:10px;
   padding:10px;
-  transition:0.4s;
-}
-
-.gallery.fade-out {
-  opacity:0;
-  transform:scale(0.98);
-}
-
-.gallery.fade-in {
-  opacity:1;
-  transform:scale(1);
 }
 
 .gallery img {
@@ -65,25 +54,37 @@ header {
   object-fit:cover;
   border-radius:8px;
   cursor:pointer;
+  transition:0.3s;
 }
 
-/* VIDEO CONTAINER 16:9 */
-.video-container {
+.gallery img:hover {
+  transform:scale(1.05);
+}
+
+/* VIDEO CARD (NETFLIX STYLE) */
+.video-card {
   position:relative;
-  width:100%;
-  max-width:900px;
-  margin:auto;
-  padding-bottom:56.25%; /* 16:9 */
-  height:0;
+  cursor:pointer;
 }
 
-.video-container iframe {
-  position:absolute;
-  top:0;
-  left:0;
+.video-card img {
   width:100%;
-  height:100%;
-  border-radius:10px;
+  height:250px;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+/* PLAY BUTTON */
+.play-btn {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  font-size:50px;
+  color:#fff;
+  background:rgba(0,0,0,0.5);
+  border-radius:50%;
+  padding:10px 20px;
 }
 
 /* LIGHTBOX */
@@ -99,10 +100,9 @@ header {
   align-items:center;
 }
 
-.lightbox img,
 .lightbox iframe {
-  max-width:90%;
-  max-height:90%;
+  width:90%;
+  height:80%;
 }
 
 .lightbox.active {
@@ -159,58 +159,54 @@ const lightbox = document.getElementById("lightbox");
 
 function loadGallery(category) {
 
-  gallery.classList.add("fade-out");
+  gallery.innerHTML = "";
 
-  setTimeout(() => {
+  // NETFLIX VIDEO DJ
+  if(category === "dj-video") {
 
-    gallery.innerHTML = "";
+    const card = document.createElement("div");
+    card.className = "video-card";
 
-    // DJ VIDEO CU FORMAT CORECT
-    if(category === "dj-video") {
+    const img = document.createElement("img");
+    img.src = "https://img.youtube.com/vi/tDcWGdIWiig/hqdefault.jpg";
 
-      const container = document.createElement("div");
-      container.className = "video-container";
+    const play = document.createElement("div");
+    play.className = "play-btn";
+    play.innerHTML = "▶";
 
+    card.appendChild(img);
+    card.appendChild(play);
+
+    card.onclick = () => {
+      lightbox.innerHTML = "";
       const iframe = document.createElement("iframe");
-      iframe.src = "https://www.youtube.com/embed/tDcWGdIWiig?autoplay=1&mute=1&start=57";
-      iframe.allow = "autoplay; encrypted-media";
+      iframe.src = "https://www.youtube.com/embed/tDcWGdIWiig?autoplay=1&start=57";
+      iframe.allow = "autoplay";
       iframe.allowFullscreen = true;
+      lightbox.appendChild(iframe);
+      lightbox.classList.add("active");
+    };
 
-      container.appendChild(iframe);
-      gallery.appendChild(container);
+    gallery.appendChild(card);
 
-    } else {
+  } else {
 
-      data[category].forEach(file => {
+    data[category].forEach(file => {
 
-        const img = document.createElement("img");
-        img.src = "images/" + file;
+      const img = document.createElement("img");
+      img.src = "images/" + file;
 
-        img.style.opacity = 0;
-        img.style.transform = "translateY(10px)";
+      img.onclick = () => {
+        lightbox.innerHTML = "";
+        let clone = img.cloneNode();
+        lightbox.appendChild(clone);
+        lightbox.classList.add("active");
+      };
 
-        setTimeout(() => {
-          img.style.transition = "0.4s";
-          img.style.opacity = 1;
-          img.style.transform = "translateY(0)";
-        }, 50);
+      gallery.appendChild(img);
+    });
 
-        img.onclick = () => {
-          lightbox.innerHTML = "";
-          let clone = img.cloneNode();
-          lightbox.appendChild(clone);
-          lightbox.classList.add("active");
-        };
-
-        gallery.appendChild(img);
-      });
-
-    }
-
-    gallery.classList.remove("fade-out");
-    gallery.classList.add("fade-in");
-
-  }, 200);
+  }
 }
 
 function filterGallery(category) {
