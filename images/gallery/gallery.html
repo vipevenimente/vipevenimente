@@ -6,6 +6,220 @@
 
 <title>Galerie VIP Events Solutions</title>
 
+<meta name="description" content="Galerie foto video evenimente DJ, cabina foto, efecte speciale">
+
+<style>
+body {
+  margin:0;
+  font-family: Arial;
+  background:#111;
+  color:#fff;
+}
+
+header {
+  text-align:center;
+  padding:40px;
+}
+
+/* BUTOANE */
+.filters {
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.filters button {
+  padding:10px 15px;
+  margin:5px;
+  border:none;
+  cursor:pointer;
+  background:#222;
+  color:#fff;
+  border-radius:5px;
+  transition:0.3s;
+}
+
+.filters button:hover {
+  background:#007bff;
+}
+
+/* GALERIE */
+.gallery {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:10px;
+  padding:10px;
+  transition:0.4s;
+}
+
+.gallery.fade-out {
+  opacity:0;
+  transform:scale(0.98);
+}
+
+.gallery.fade-in {
+  opacity:1;
+  transform:scale(1);
+}
+
+.gallery img, .gallery iframe {
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.95);
+  display:none;
+  justify-content:center;
+  align-items:center;
+}
+
+.lightbox iframe {
+  width:90%;
+  height:80%;
+}
+
+.lightbox.active {
+  display:flex;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Galerie Evenimente</h1>
+</header>
+
+<div class="filters">
+  <button onclick="filterGallery('foto')">📸 Fotografie</button>
+  <button onclick="filterGallery('video')">🎥 Videografie</button>
+  <button onclick="filterGallery('dj-foto')">🎧 DJ Foto</button>
+  <button onclick="filterGallery('dj-video')">🎧 DJ Video</button>
+  <button onclick="filterGallery('efecte-foto')">✨ Efecte Foto</button>
+</div>
+
+<div class="gallery" id="gallery"></div>
+
+<div class="lightbox" id="lightbox"></div>
+
+<script>
+
+const data = {
+
+  "foto": [
+    "foto1.jpg","foto2.jpg","foto3.jpg","foto4.jpg","foto5.jpg",
+    "foto6.jpg","foto7.jpg","foto8.jpg","foto9.jpg","foto10.jpg"
+  ],
+
+  "video": [
+    "foto1.jpg","foto2.jpg","foto3.jpg"
+  ],
+
+  "dj-foto": [
+    "dj-foto1.jpg","dj-foto2.jpg","dj-foto3.jpg","dj-foto4.jpg","dj-foto5.jpg",
+    "dj-foto6.jpg","dj-foto7.jpg","dj-foto8.jpg","dj-foto9.jpg","dj-foto10.jpg"
+  ],
+
+  "efecte-foto": [
+    "efecte-foto1.jpg","efecte-foto2.jpg","efecte-foto3.jpg","efecte-foto4.jpg","efecte-foto5.jpg",
+    "efecte-foto6.jpg","efecte-foto7.jpg","efecte-foto8.jpg","efecte-foto9.jpg","efecte-foto10.jpg"
+  ]
+
+};
+
+const gallery = document.getElementById("gallery");
+const lightbox = document.getElementById("lightbox");
+
+function loadGallery(category) {
+
+  gallery.classList.add("fade-out");
+
+  setTimeout(() => {
+
+    gallery.innerHTML = "";
+
+    // 🔥 DJ VIDEO SPECIAL (YOUTUBE AUTOPLAY)
+    if(category === "dj-video") {
+
+      const iframe = document.createElement("iframe");
+
+      iframe.src = "https://www.youtube.com/embed/tDcWGdIWiig?autoplay=1&mute=1&start=57";
+
+      iframe.allow = "autoplay; encrypted-media";
+      iframe.allowFullscreen = true;
+
+      iframe.onclick = () => {
+        lightbox.innerHTML = "";
+        let clone = iframe.cloneNode(true);
+        lightbox.appendChild(clone);
+        lightbox.classList.add("active");
+      };
+
+      gallery.appendChild(iframe);
+
+    } else {
+
+      data[category].forEach(file => {
+
+        const img = document.createElement("img");
+        img.src = "images/" + file;
+
+        img.style.opacity = 0;
+        img.style.transform = "translateY(10px)";
+
+        setTimeout(() => {
+          img.style.transition = "0.4s";
+          img.style.opacity = 1;
+          img.style.transform = "translateY(0)";
+        }, 50);
+
+        img.onclick = () => {
+          lightbox.innerHTML = "";
+          let clone = img.cloneNode();
+          lightbox.appendChild(clone);
+          lightbox.classList.add("active");
+        };
+
+        gallery.appendChild(img);
+      });
+
+    }
+
+    gallery.classList.remove("fade-out");
+    gallery.classList.add("fade-in");
+
+  }, 200);
+}
+
+function filterGallery(category) {
+  loadGallery(category);
+}
+
+lightbox.onclick = () => {
+  lightbox.classList.remove("active");
+};
+
+loadGallery("foto");
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Galerie VIP Events Solutions</title>
+
 <meta name="description" content="Galerie foto video evenimente: DJ, cabina foto, efecte speciale.">
 
 <style>
