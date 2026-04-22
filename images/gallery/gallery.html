@@ -4,93 +4,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Galerie VIP Events Solutions</title>
+<title>Galerie Foto Evenimente</title>
 
 <style>
 body {
   margin:0;
   font-family: Arial;
-  background:#0b0b0b;
+  background:#111;
   color:#fff;
-}
-
-/* HEADER */
-header {
   text-align:center;
-  padding:40px;
 }
 
-/* BUTOANE */
-.filters {
-  text-align:center;
-  margin-bottom:25px;
+h1 {
+  padding:30px 0;
 }
 
-.filters button {
-  padding:10px 18px;
-  margin:5px;
-  border:none;
+/* GRID */
+.gallery {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+  padding:20px;
+}
+
+.gallery img {
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:10px;
   cursor:pointer;
-  background:#1a1a1a;
-  color:#ccc;
-  border-radius:20px;
   transition:0.3s;
 }
 
-.filters button.active,
-.filters button:hover {
-  background:#007bff;
-  color:#fff;
-}
-
-/* GALERIE */
-.gallery {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:15px;
-  padding:15px;
-  transition:0.4s;
-}
-
-.gallery.fade-out {
-  opacity:0;
-  transform:scale(0.98);
-}
-
-.gallery.fade-in {
-  opacity:1;
-  transform:scale(1);
-}
-
-/* CARD */
-.card {
-  position:relative;
-  overflow:hidden;
-  border-radius:12px;
-}
-
-.card img {
-  width:100%;
-  height:260px;
-  object-fit:cover;
-  transition:0.4s;
-}
-
-.card:hover img {
-  transform:scale(1.1);
-  filter:brightness(0.8);
-}
-
-/* PLAY BUTTON */
-.play-btn {
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%, -50%);
-  font-size:55px;
-  background:rgba(0,0,0,0.6);
-  padding:10px 20px;
-  border-radius:50%;
+.gallery img:hover {
+  transform:scale(1.05);
 }
 
 /* LIGHTBOX */
@@ -100,20 +47,10 @@ header {
   left:0;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.95);
-  backdrop-filter: blur(10px);
+  background:rgba(0,0,0,0.9);
   display:none;
   justify-content:center;
   align-items:center;
-  padding:20px;
-}
-
-.lightbox iframe {
-  width:85vw;
-  height:90vh;
-  max-width:1100px;
-  aspect-ratio:16/9;
-  border-radius:10px;
 }
 
 .lightbox img {
@@ -121,150 +58,38 @@ header {
   max-height:90%;
   border-radius:10px;
 }
-
-.lightbox.active {
-  display:flex;
-}
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Galerie Evenimente</h1>
-</header>
+<h1>Galerie DJ Evenimente</h1>
 
-<div class="filters">
-  <button class="active" onclick="filterGallery('foto', this)">📸 Fotografie</button>
-  <button onclick="filterGallery('video', this)">🎥 Videografie</button>
-  <button onclick="filterGallery('dj-foto', this)">🎧 DJ Foto</button>
-  <button onclick="filterGallery('dj-video', this)">🎧 DJ Video</button>
-  <button onclick="filterGallery('efecte-foto', this)">✨ Efecte Foto</button>
+<div class="gallery">
+
+  <img src="images/dj-foto1.jpeg" onclick="openImg(this.src)">
+  <img src="images/dj-foto2.jpeg" onclick="openImg(this.src)">
+  <img src="images/dj-foto3.jpeg" onclick="openImg(this.src)">
+  <img src="images/dj-foto4.jpeg" onclick="openImg(this.src)">
+  <img src="images/dj-foto5.jpeg" onclick="openImg(this.src)">
+  <img src="images/dj-foto6.jpeg" onclick="openImg(this.src)">
+  <img src="images/dj-foto7.jpeg" onclick="openImg(this.src)">
+
 </div>
 
-<div class="gallery" id="gallery"></div>
-<div class="lightbox" id="lightbox"></div>
+<div class="lightbox" id="lightbox" onclick="closeImg()">
+  <img id="lightbox-img">
+</div>
 
 <script>
-
-const data = {
-
-  "foto": [
-    "images/gallery/dj-foto1.jpg",
-    "images/gallery/dj-foto2.jpg",
-    "images/gallery/dj-foto3.jpg",
-    "images/gallery/dj-foto4.jpg",
-    "images/gallery/dj-foto5.jpg"
-  ],
-
-  "video": [
-    "gallery/foto1.jpg",
-    "gallery/foto2.jpg"
-  ],
-
-  "dj-foto": [
-    "dj-foto1.jpeg",
-    "dj-foto2.jpeg",
-    "dj-foto3.jpeg",
-    "dj-foto4.jpeg",
-    "dj-foto5.jpeg",
-    "dj-foto6.jpeg",
-    "dj-foto7.jpeg"
-  ],
-
-  "efecte-foto": [
-    "efecte1.jpg",
-    "efecte2.jpg",
-    "efecte3.jpg"
-  ]
-
-};
-
-const gallery = document.getElementById("gallery");
-const lightbox = document.getElementById("lightbox");
-
-function loadGallery(category) {
-
-  gallery.classList.add("fade-out");
-
-  setTimeout(() => {
-
-    gallery.innerHTML = "";
-
-    // DJ VIDEO (YouTube)
-    if(category === "dj-video") {
-
-      const card = document.createElement("div");
-      card.className = "card";
-
-      const img = document.createElement("img");
-      img.src = "https://img.youtube.com/vi/tDcWGdIWiig/hqdefault.jpg";
-
-      const play = document.createElement("div");
-      play.className = "play-btn";
-      play.innerHTML = "▶";
-
-      card.appendChild(img);
-      card.appendChild(play);
-
-      card.onclick = () => {
-        lightbox.innerHTML = "";
-
-        const iframe = document.createElement("iframe");
-        iframe.src = "https://www.youtube.com/embed/tDcWGdIWiig?autoplay=1&start=57";
-        iframe.allow = "autoplay";
-        iframe.allowFullscreen = true;
-
-        lightbox.appendChild(iframe);
-        lightbox.classList.add("active");
-      };
-
-      gallery.appendChild(card);
-
-    } else {
-
-      data[category].forEach(file => {
-
-        const card = document.createElement("div");
-        card.className = "card";
-
-        const img = document.createElement("img");
-        img.src = "images/" + file;
-
-        card.appendChild(img);
-
-        card.onclick = () => {
-          lightbox.innerHTML = "";
-          let clone = img.cloneNode();
-          lightbox.appendChild(clone);
-          lightbox.classList.add("active");
-        };
-
-        gallery.appendChild(card);
-      });
-
-    }
-
-    gallery.classList.remove("fade-out");
-    gallery.classList.add("fade-in");
-
-  }, 200);
+function openImg(src) {
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = src;
 }
 
-function filterGallery(category, btn) {
-
-  document.querySelectorAll(".filters button").forEach(b => b.classList.remove("active"));
-  btn.classList.add("active");
-
-  loadGallery(category);
+function closeImg() {
+  document.getElementById("lightbox").style.display = "none";
 }
-
-lightbox.onclick = () => {
-  lightbox.classList.remove("active");
-};
-
-loadGallery("foto");
-
 </script>
 
 </body>
