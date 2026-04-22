@@ -173,7 +173,7 @@ function loadGallery(category) {
 
       if(file.includes(".mp4")) {
         el = document.createElement("video");
-        el.src = "images/gallery/" + file;
+        el.src = "images" + file;
         el.controls = true;
       } else {
         el = document.createElement("img");
