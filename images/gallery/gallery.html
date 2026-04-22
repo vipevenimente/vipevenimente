@@ -10,68 +10,79 @@
 body {
   margin:0;
   font-family: Arial;
-  background:#111;
+  background:#0b0b0b;
   color:#fff;
 }
 
+/* HEADER */
 header {
   text-align:center;
   padding:40px;
 }
 
+header h1 {
+  font-size:32px;
+}
+
 /* BUTOANE */
 .filters {
   text-align:center;
-  margin-bottom:20px;
+  margin-bottom:25px;
 }
 
 .filters button {
-  padding:10px 15px;
+  padding:10px 18px;
   margin:5px;
   border:none;
   cursor:pointer;
-  background:#222;
-  color:#fff;
-  border-radius:5px;
+  background:#1a1a1a;
+  color:#ccc;
+  border-radius:20px;
   transition:0.3s;
 }
 
+.filters button.active,
 .filters button:hover {
   background:#007bff;
+  color:#fff;
 }
 
 /* GALERIE */
 .gallery {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:10px;
-  padding:10px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:15px;
+  padding:15px;
+  transition:0.4s;
 }
 
-.gallery img {
-  width:100%;
-  height:250px;
-  object-fit:cover;
-  border-radius:8px;
-  cursor:pointer;
-  transition:0.3s;
+.gallery.fade-out {
+  opacity:0;
+  transform:scale(0.98);
 }
 
-.gallery img:hover {
-  transform:scale(1.05);
+.gallery.fade-in {
+  opacity:1;
+  transform:scale(1);
 }
 
-/* VIDEO CARD (NETFLIX STYLE) */
-.video-card {
+/* CARD */
+.card {
   position:relative;
-  cursor:pointer;
+  overflow:hidden;
+  border-radius:12px;
 }
 
-.video-card img {
+.card img {
   width:100%;
-  height:250px;
+  height:260px;
   object-fit:cover;
-  border-radius:8px;
+  transition:0.4s;
+}
+
+.card:hover img {
+  transform:scale(1.1);
+  filter:brightness(0.8);
 }
 
 /* PLAY BUTTON */
@@ -80,11 +91,10 @@ header {
   top:50%;
   left:50%;
   transform:translate(-50%, -50%);
-  font-size:50px;
-  color:#fff;
-  background:rgba(0,0,0,0.5);
-  border-radius:50%;
+  font-size:55px;
+  background:rgba(0,0,0,0.6);
   padding:10px 20px;
+  border-radius:50%;
 }
 
 /* LIGHTBOX */
@@ -95,18 +105,27 @@ header {
   width:100%;
   height:100%;
   background:rgba(0,0,0,0.95);
+  backdrop-filter: blur(10px);
   display:none;
   justify-content:center;
   align-items:center;
+  animation:fadeIn 0.3s;
 }
 
+.lightbox img,
 .lightbox iframe {
-  width:90%;
-  height:80%;
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
 }
 
 .lightbox.active {
   display:flex;
+}
+
+@keyframes fadeIn {
+  from {opacity:0;}
+  to {opacity:1;}
 }
 </style>
 </head>
@@ -118,15 +137,14 @@ header {
 </header>
 
 <div class="filters">
-  <button onclick="filterGallery('foto')">📸 Fotografie</button>
-  <button onclick="filterGallery('video')">🎥 Videografie</button>
-  <button onclick="filterGallery('dj-foto')">🎧 DJ Foto</button>
-  <button onclick="filterGallery('dj-video')">🎧 DJ Video</button>
-  <button onclick="filterGallery('efecte-foto')">✨ Efecte Foto</button>
+  <button class="active" onclick="filterGallery('foto', this)">📸 Fotografie</button>
+  <button onclick="filterGallery('video', this)">🎥 Videografie</button>
+  <button onclick="filterGallery('dj-foto', this)">🎧 DJ Foto</button>
+  <button onclick="filterGallery('dj-video', this)">🎧 DJ Video</button>
+  <button onclick="filterGallery('efecte-foto', this)">✨ Efecte Foto</button>
 </div>
 
 <div class="gallery" id="gallery"></div>
-
 <div class="lightbox" id="lightbox"></div>
 
 <script>
@@ -159,57 +177,74 @@ const lightbox = document.getElementById("lightbox");
 
 function loadGallery(category) {
 
-  gallery.innerHTML = "";
+  gallery.classList.add("fade-out");
 
-  // NETFLIX VIDEO DJ
-  if(category === "dj-video") {
+  setTimeout(() => {
 
-    const card = document.createElement("div");
-    card.className = "video-card";
+    gallery.innerHTML = "";
 
-    const img = document.createElement("img");
-    img.src = "https://img.youtube.com/vi/tDcWGdIWiig/hqdefault.jpg";
+    if(category === "dj-video") {
 
-    const play = document.createElement("div");
-    play.className = "play-btn";
-    play.innerHTML = "▶";
-
-    card.appendChild(img);
-    card.appendChild(play);
-
-    card.onclick = () => {
-      lightbox.innerHTML = "";
-      const iframe = document.createElement("iframe");
-      iframe.src = "https://www.youtube.com/embed/tDcWGdIWiig?autoplay=1&start=57";
-      iframe.allow = "autoplay";
-      iframe.allowFullscreen = true;
-      lightbox.appendChild(iframe);
-      lightbox.classList.add("active");
-    };
-
-    gallery.appendChild(card);
-
-  } else {
-
-    data[category].forEach(file => {
+      const card = document.createElement("div");
+      card.className = "card";
 
       const img = document.createElement("img");
-      img.src = "images/" + file;
+      img.src = "https://img.youtube.com/vi/tDcWGdIWiig/hqdefault.jpg";
 
-      img.onclick = () => {
+      const play = document.createElement("div");
+      play.className = "play-btn";
+      play.innerHTML = "▶";
+
+      card.appendChild(img);
+      card.appendChild(play);
+
+      card.onclick = () => {
         lightbox.innerHTML = "";
-        let clone = img.cloneNode();
-        lightbox.appendChild(clone);
+        const iframe = document.createElement("iframe");
+        iframe.src = "https://www.youtube.com/embed/tDcWGdIWiig?autoplay=1&start=57";
+        iframe.allow = "autoplay";
+        iframe.allowFullscreen = true;
+        lightbox.appendChild(iframe);
         lightbox.classList.add("active");
       };
 
-      gallery.appendChild(img);
-    });
+      gallery.appendChild(card);
 
-  }
+    } else {
+
+      data[category].forEach(file => {
+
+        const card = document.createElement("div");
+        card.className = "card";
+
+        const img = document.createElement("img");
+        img.src = "images/" + file;
+
+        card.appendChild(img);
+
+        card.onclick = () => {
+          lightbox.innerHTML = "";
+          let clone = img.cloneNode();
+          lightbox.appendChild(clone);
+          lightbox.classList.add("active");
+        };
+
+        gallery.appendChild(card);
+      });
+
+    }
+
+    gallery.classList.remove("fade-out");
+    gallery.classList.add("fade-in");
+
+  }, 200);
 }
 
-function filterGallery(category) {
+function filterGallery(category, btn) {
+
+  document.querySelectorAll(".filters button").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+
   loadGallery(category);
 }
 
