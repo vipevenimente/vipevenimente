@@ -4,22 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Galerie Foto | VIP Events</title>
-
-<meta name="description" content="Galerie foto evenimente VIP Events Solutions - DJ, cabina foto, momente reale.">
-<meta name="robots" content="index, follow">
+<title>Galerie VIP Events</title>
 
 <style>
 body {
   margin:0;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   background:#111;
   color:#fff;
 }
 
 header {
   text-align:center;
-  padding:40px 20px;
+  padding:40px;
+}
+
+.filters {
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.filters button {
+  padding:10px 15px;
+  margin:5px;
+  border:none;
+  cursor:pointer;
+  background:#222;
+  color:#fff;
+  border-radius:5px;
+}
+
+.filters button.active {
+  background:#007bff;
 }
 
 .gallery {
@@ -29,16 +45,12 @@ header {
   padding:10px;
 }
 
-.gallery img {
+.gallery img, .gallery video {
   width:100%;
   height:250px;
   object-fit:cover;
   cursor:pointer;
-  transition:0.3s;
-}
-
-.gallery img:hover {
-  transform:scale(1.05);
+  border-radius:8px;
 }
 
 /* LIGHTBOX */
@@ -48,13 +60,13 @@ header {
   left:0;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.9);
+  background:rgba(0,0,0,0.95);
   display:none;
   justify-content:center;
   align-items:center;
 }
 
-.lightbox img {
+.lightbox img, .lightbox video {
   max-width:90%;
   max-height:90%;
 }
@@ -63,55 +75,102 @@ header {
   display:flex;
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
   <h1>Galerie Evenimente</h1>
-  <p>Momente reale • Emoții • Distracție</p>
 </header>
+
+<!-- FILTRE -->
+<div class="filters">
+  <button onclick="filter('foto')">Foto</button>
+  <button onclick="filter('video')">Video</button>
+  <button onclick="filter('dj-foto')">DJ Foto</button>
+  <button onclick="filter('dj-video')">DJ Video</button>
+  <button onclick="filter('efecte-foto')">Efecte Foto</button>
+  <button onclick="filter('efecte-video')">Efecte Video</button>
+</div>
 
 <div class="gallery" id="gallery"></div>
 
-<div class="lightbox" id="lightbox">
-  <img src="" id="lightbox-img">
-</div>
+<div class="lightbox" id="lightbox"></div>
 
 <script>
 
-// 🔥 ADAUGI DOAR NUMELE POZELOR AICI
-const images = [
-  "preview1.png",
-  "preview3.png",
-  "img3.jpg",
-  "img4.jpg",
-  "img5.jpg",
-  "img6.jpg"
-];
+const data = {
+
+  "foto": [
+    "foto1.jpg","foto2.jpg","foto3.jpg","foto4.jpg","foto5.jpg",
+    "foto6.jpg","foto7.jpg","foto8.jpg","foto9.jpg","foto10.jpg"
+  ],
+
+  "video": [
+    "video1.mp4","video2.mp4","video3.mp4"
+  ],
+
+  "dj-foto": [
+    "dj-foto1.jpg","dj-foto2.jpg","dj-foto3.jpg","dj-foto4.jpg","dj-foto5.jpg",
+    "dj-foto6.jpg","dj-foto7.jpg","dj-foto8.jpg","dj-foto9.jpg","dj-foto10.jpg"
+  ],
+
+  "dj-video": [
+    "dj-video1.mp4","dj-video2.mp4","dj-video3.mp4"
+  ],
+
+  "efecte-foto": [
+    "efecte-foto1.jpg","efecte-foto2.jpg","efecte-foto3.jpg","efecte-foto4.jpg","efecte-foto5.jpg",
+    "efecte-foto6.jpg","efecte-foto7.jpg","efecte-foto8.jpg","efecte-foto9.jpg","efecte-foto10.jpg"
+  ],
+
+  "efecte-video": [
+    "efecte-video1.mp4","efecte-video2.mp4","efecte-video3.mp4"
+  ]
+
+};
 
 const gallery = document.getElementById("gallery");
 const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
 
-// GENERARE AUTOMATĂ
-images.forEach(img => {
-  const image = document.createElement("img");
-  image.src = "images/gallery/" + img;
+function load(category) {
 
-  image.onclick = () => {
-    lightbox.classList.add("active");
-    lightboxImg.src = image.src;
-  };
+  gallery.innerHTML = "";
 
-  gallery.appendChild(image);
-});
+  data[category].forEach(file => {
 
-// ÎNCHIDERE LIGHTBOX
+    let el;
+
+    if(file.includes(".mp4")) {
+      el = document.createElement("video");
+      el.src = "images/gallery/" + file;
+      el.controls = true;
+    } else {
+      el = document.createElement("img");
+      el.src = "images/gallery/" + file;
+    }
+
+    el.onclick = () => {
+      lightbox.innerHTML = "";
+      let clone = el.cloneNode(true);
+      clone.controls = true;
+      lightbox.appendChild(clone);
+      lightbox.classList.add("active");
+    };
+
+    gallery.appendChild(el);
+  });
+}
+
+function filter(category) {
+  load(category);
+}
+
 lightbox.onclick = () => {
   lightbox.classList.remove("active");
 };
+
+load("foto");
 
 </script>
 
