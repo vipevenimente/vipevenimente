@@ -6,8 +6,6 @@
 
 <title>Galerie VIP Events Solutions</title>
 
-<meta name="description" content="Galerie foto video evenimente DJ, cabina foto, efecte speciale">
-
 <style>
 body {
   margin:0;
@@ -61,11 +59,31 @@ header {
   transform:scale(1);
 }
 
-.gallery img, .gallery iframe {
+.gallery img {
   width:100%;
   height:250px;
   object-fit:cover;
   border-radius:8px;
+  cursor:pointer;
+}
+
+/* VIDEO CONTAINER 16:9 */
+.video-container {
+  position:relative;
+  width:100%;
+  max-width:900px;
+  margin:auto;
+  padding-bottom:56.25%; /* 16:9 */
+  height:0;
+}
+
+.video-container iframe {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border-radius:10px;
 }
 
 /* LIGHTBOX */
@@ -81,9 +99,10 @@ header {
   align-items:center;
 }
 
+.lightbox img,
 .lightbox iframe {
-  width:90%;
-  height:80%;
+  max-width:90%;
+  max-height:90%;
 }
 
 .lightbox.active {
@@ -146,24 +165,19 @@ function loadGallery(category) {
 
     gallery.innerHTML = "";
 
-    // 🔥 DJ VIDEO SPECIAL (YOUTUBE AUTOPLAY)
+    // DJ VIDEO CU FORMAT CORECT
     if(category === "dj-video") {
 
+      const container = document.createElement("div");
+      container.className = "video-container";
+
       const iframe = document.createElement("iframe");
-
       iframe.src = "https://www.youtube.com/embed/tDcWGdIWiig?autoplay=1&mute=1&start=57";
-
       iframe.allow = "autoplay; encrypted-media";
       iframe.allowFullscreen = true;
 
-      iframe.onclick = () => {
-        lightbox.innerHTML = "";
-        let clone = iframe.cloneNode(true);
-        lightbox.appendChild(clone);
-        lightbox.classList.add("active");
-      };
-
-      gallery.appendChild(iframe);
+      container.appendChild(iframe);
+      gallery.appendChild(container);
 
     } else {
 
@@ -192,227 +206,6 @@ function loadGallery(category) {
       });
 
     }
-
-    gallery.classList.remove("fade-out");
-    gallery.classList.add("fade-in");
-
-  }, 200);
-}
-
-function filterGallery(category) {
-  loadGallery(category);
-}
-
-lightbox.onclick = () => {
-  lightbox.classList.remove("active");
-};
-
-loadGallery("foto");
-
-</script>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="ro">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Galerie VIP Events Solutions</title>
-
-<meta name="description" content="Galerie foto video evenimente: DJ, cabina foto, efecte speciale.">
-
-<style>
-body {
-  margin:0;
-  font-family: Arial;
-  background:#111;
-  color:#fff;
-}
-
-/* HEADER */
-header {
-  text-align:center;
-  padding:40px;
-}
-
-/* BUTTONS */
-.filters {
-  text-align:center;
-  margin-bottom:20px;
-}
-
-.filters button {
-  padding:10px 15px;
-  margin:5px;
-  border:none;
-  cursor:pointer;
-  background:#222;
-  color:#fff;
-  border-radius:5px;
-  transition:0.3s;
-}
-
-.filters button:hover {
-  background:#007bff;
-}
-
-/* GALLERY */
-.gallery {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:10px;
-  padding:10px;
-  transition: all 0.4s ease;
-}
-
-.gallery.fade-out {
-  opacity:0;
-  transform:scale(0.98);
-}
-
-.gallery.fade-in {
-  opacity:1;
-  transform:scale(1);
-}
-
-.gallery img,
-.gallery video {
-  width:100%;
-  height:250px;
-  object-fit:cover;
-  border-radius:8px;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.gallery img:hover,
-.gallery video:hover {
-  transform:scale(1.05);
-}
-
-/* LIGHTBOX */
-.lightbox {
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.95);
-  display:none;
-  justify-content:center;
-  align-items:center;
-}
-
-.lightbox img,
-.lightbox video {
-  max-width:90%;
-  max-height:90%;
-}
-
-.lightbox.active {
-  display:flex;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-  <h1>Galerie Evenimente</h1>
-  <p>Momente reale • Emoții • Distracție</p>
-</header>
-
-<!-- FILTRE -->
-<div class="filters">
-  <button onclick="filterGallery('foto')">📸 Fotografie</button>
-  <button onclick="filterGallery('video')">🎥 Videografie</button>
-  <button onclick="filterGallery('dj-foto')">🎧 DJ Foto</button>
-  <button onclick="filterGallery('dj-video')">🎧 DJ Video</button>
-  <button onclick="filterGallery('efecte-foto')">✨ Efecte Foto</button>
-  <button onclick="filterGallery('efecte-video')">✨ Efecte Video</button>
-</div>
-
-<div class="gallery" id="gallery"></div>
-
-<div class="lightbox" id="lightbox"></div>
-
-<script>
-
-const data = {
-
-  "foto": [
-    "foto1.jpg","foto2.jpg","foto3.jpg","foto4.jpg","foto5.jpg",
-    "foto6.jpg","foto7.jpg","foto8.jpg","foto9.jpg","foto10.jpg"
-  ],
-
-  "video": [
-    "video1.mp4","video2.mp4","video3.mp4"
-  ],
-
-  "dj-foto": [
-    "dj-foto1.jpg","dj-foto2.jpg","dj-foto3.jpg","dj-foto4.jpg","dj-foto5.jpg",
-    "dj-foto6.jpg","dj-foto7.jpg","dj-foto8.jpg","dj-foto9.jpg","dj-foto10.jpg"
-  ],
-
-  "dj-video": [
-    "20240427_172255.mp4","dj-video2.mp4","dj-video3.mp4"
-  ],
-
-  "efecte-foto": [
-    "efecte-foto1.jpg","efecte-foto2.jpg","efecte-foto3.jpg","efecte-foto4.jpg","efecte-foto5.jpg",
-    "efecte-foto6.jpg","efecte-foto7.jpg","efecte-foto8.jpg","efecte-foto9.jpg","efecte-foto10.jpg"
-  ],
-
-  "efecte-video": [
-    "efecte-video1.mp4","efecte-video2.mp4","efecte-video3.mp4"
-  ]
-
-};
-
-const gallery = document.getElementById("gallery");
-const lightbox = document.getElementById("lightbox");
-
-function loadGallery(category) {
-
-  gallery.classList.add("fade-out");
-
-  setTimeout(() => {
-
-    gallery.innerHTML = "";
-
-    data[category].forEach(file => {
-
-      let el;
-
-      if(file.includes(".mp4")) {
-        el = document.createElement("video");
-        el.src = "images/" + file;
-        el.controls = true;
-      } else {
-        el = document.createElement("img");
-        el.src = "images/gallery/" + file;
-      }
-
-      el.style.opacity = 0;
-      el.style.transform = "translateY(10px)";
-
-      setTimeout(() => {
-        el.style.transition = "all 0.4s ease";
-        el.style.opacity = 1;
-        el.style.transform = "translateY(0)";
-      }, 50);
-
-      el.onclick = () => {
-        lightbox.innerHTML = "";
-        let clone = el.cloneNode(true);
-        clone.controls = true;
-        lightbox.appendChild(clone);
-        lightbox.classList.add("active");
-      };
-
-      gallery.appendChild(el);
-    });
 
     gallery.classList.remove("fade-out");
     gallery.classList.add("fade-in");
