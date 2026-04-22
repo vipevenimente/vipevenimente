@@ -108,16 +108,14 @@ header {
   padding:20px;
 }
 
-/* VIDEO MARE (FINAL) */
 .lightbox iframe {
   width:85vw;
   height:90vh;
   max-width:1100px;
-  aspect-ratio:16 / 9;
+  aspect-ratio:16/9;
   border-radius:10px;
 }
 
-/* IMAGINI */
 .lightbox img {
   max-width:90%;
   max-height:90%;
@@ -152,22 +150,32 @@ header {
 const data = {
 
   "foto": [
-    "foto1.jpg","foto2.jpg","foto3.jpg","foto4.jpg","foto5.jpg",
-    "foto6.jpg","foto7.jpg","foto8.jpg","foto9.jpg","foto10.jpg"
+    "gallery/foto1.jpg",
+    "gallery/foto2.jpg",
+    "gallery/foto3.jpg",
+    "gallery/foto4.jpg",
+    "gallery/foto5.jpg"
   ],
 
   "video": [
-    "foto1.jpg","foto2.jpg","foto3.jpg"
+    "gallery/foto1.jpg",
+    "gallery/foto2.jpg"
   ],
 
   "dj-foto": [
-    src="images/dj-foto1.jpg", src="images/dj-foto2.jpg", src="images/dj-foto3.jpg", src="images/dj-foto4.jpg", src="images/dj-foto5.jpg",
-     src="imagesdj-foto6.jpg", src="images/dj-foto7.jpg"
+    "gallery/dj-foto1.jpeg",
+    "gallery/dj-foto2.jpeg",
+    "gallery/dj-foto3.jpeg",
+    "gallery/dj-foto4.jpeg",
+    "gallery/dj-foto5.jpeg",
+    "gallery/dj-foto6.jpeg",
+    "gallery/dj-foto7.jpeg"
   ],
 
   "efecte-foto": [
-    "efecte-foto1.jpg","efecte-foto2.jpg","efecte-foto3.jpg","efecte-foto4.jpg","efecte-foto5.jpg",
-    "efecte-foto6.jpg","efecte-foto7.jpg","efecte-foto8.jpg","efecte-foto9.jpg","efecte-foto10.jpg"
+    "gallery/efecte1.jpg",
+    "gallery/efecte2.jpg",
+    "gallery/efecte3.jpg"
   ]
 
 };
@@ -183,7 +191,7 @@ function loadGallery(category) {
 
     gallery.innerHTML = "";
 
-    // DJ VIDEO NETFLIX STYLE
+    // DJ VIDEO (YouTube)
     if(category === "dj-video") {
 
       const card = document.createElement("div");
