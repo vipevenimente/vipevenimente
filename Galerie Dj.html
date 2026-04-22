@@ -1,1 +1,119 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Galerie Foto DJ Nuntă | VIP Events Solutions</title>
+
+<meta name="description" content="Galerie foto DJ pentru nunți și evenimente. Atmosferă, lumini profesionale și distracție garantată.">
+
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#111;
+  color:#fff;
+  text-align:center;
+}
+
+/* HEADER */
+header {
+  padding:30px;
+  background:#000;
+}
+
+h1 {
+  margin:0;
+}
+
+/* GALERIE */
+.gallery {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+  padding:20px;
+}
+
+.gallery img {
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.gallery img:hover {
+  transform:scale(1.05);
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  display:none;
+  justify-content:center;
+  align-items:center;
+}
+
+.lightbox img {
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
+}
+
+/* BACK BUTTON */
+.back {
+  display:inline-block;
+  margin:20px;
+  padding:10px 15px;
+  background:#007bff;
+  color:#fff;
+  text-decoration:none;
+  border-radius:5px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Galerie Foto DJ</h1>
+  <a class="back" href="dj-nunta.html">⬅ Înapoi la DJ</a>
+</header>
+
+<div class="gallery">
+
+  <img src="images/1.jpeg" onclick="openImg(this.src)">
+  <img src="images/2.jpeg" onclick="openImg(this.src)">
+  <img src="images/3.jpeg" onclick="openImg(this.src)">
+  <img src="images/4.jpeg" onclick="openImg(this.src)">
+  <img src="images/5.jpeg" onclick="openImg(this.src)">
+  <img src="images/6.jpeg" onclick="openImg(this.src)">
+  <img src="images/7.jpeg" onclick="openImg(this.src)">
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeImg()">
+  <img id="lightbox-img">
+</div>
+
+<script>
+function openImg(src) {
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = src;
+}
+
+function closeImg() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+</body>
+</html>
