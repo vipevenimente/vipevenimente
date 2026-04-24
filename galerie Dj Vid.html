@@ -27,7 +27,7 @@ h1 {
   margin:0;
 }
 
-/* VIDEO GRID */
+/* GRID */
 .video-grid {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -35,14 +35,23 @@ h1 {
   padding:20px;
 }
 
-/* VIDEO CARD */
+/* CARD VIDEO */
 .video-card {
+  max-width:500px;
+  margin:auto;
   position:relative;
   cursor:pointer;
+  transition:0.3s;
+}
+
+.video-card:hover {
+  transform:scale(1.03);
 }
 
 .video-card img {
   width:100%;
+  height:280px;
+  object-fit:cover;
   border-radius:10px;
 }
 
@@ -99,15 +108,15 @@ h1 {
 
 <div class="video-grid">
 
-  <!-- VIDEO 1 -->
+  <!-- VIDEO -->
   <div class="video-card" onclick="openVideo('tDcWGdIWiig')">
-    <img src="https://img.youtube.com/vi/tDcWGdIWiig/hqdefault.jpg">
+    <img src="https://img.youtube.com/vi/tDcWGdIWiig/hqdefault.jpg" alt="Video DJ eveniment">
     <div class="play">▶</div>
   </div>
 
 </div>
 
-<!-- LIGHTBOX VIDEO -->
+<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeVideo()"></div>
 
 <script>
