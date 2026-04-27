@@ -67,14 +67,9 @@ h2{
 /* GRID */
 .pricing{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(250px,320px));
   gap:20px;
-}
-
-/* SINGLE CARD FIX */
-.single-card{
-  max-width:350px;
-  margin:0 auto;
+  justify-content:center;
 }
 
 /* CARD */
@@ -84,13 +79,15 @@ h2{
   overflow:hidden;
   border:1px solid #222;
   transition:0.3s;
+  width:100%;
+  max-width:320px;
 }
 
 .card:hover{
   transform:translateY(-5px);
 }
 
-/* IMG FIX */
+/* IMAGE FIX */
 .card-img{
   height:180px;
   display:flex;
@@ -240,7 +237,8 @@ footer{
 <h2>Artificii Exterior</h2>
 
 <div class="pricing">
-<div class="card single-card">
+
+<div class="card">
 <div class="card-img"><img src="images/exterior.png"></div>
 <div class="card-content">
 <h3>Pachet Exterior</h3>
@@ -253,6 +251,7 @@ footer{
 </ul>
 </div>
 </div>
+
 </div>
 
 <div class="notice">
@@ -268,7 +267,7 @@ Prețurile se stabilesc personalizat.
 
 <div class="pricing">
 
-<div class="card single-card">
+<div class="card">
 <div class="card-img"><img src="images/art de zi single.png"></div>
 <div class="card-content">
 <h3>Single Shot</h3>
@@ -276,7 +275,7 @@ Prețurile se stabilesc personalizat.
 </div>
 </div>
 
-<div class="card single-card">
+<div class="card">
 <div class="card-img"><img src="images/25 focuri.png"></div>
 <div class="card-content">
 <h3>25 focuri</h3>
@@ -293,7 +292,7 @@ Prețurile se stabilesc personalizat.
 
 <div class="pricing">
 
-<div class="card single-card">
+<div class="card">
 <div class="card-img"><img src="images/co2.jpeg"></div>
 <div class="card-content">
 <h3>Pistol CO2</h3>
