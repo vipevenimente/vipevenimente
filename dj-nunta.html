@@ -1,110 +1,182 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>DJ Nuntă Profesional | VIP Events Solutions</title>
+<title>DJ Nuntă | VIP Events Solutions</title>
 
-  <meta name="description" content="DJ nuntă profesionist cu sonorizare, lumini și MC.">
+<style>
+body {
+  font-family: Arial;
+  margin:0;
+  background:#0d0d0d;
+  color:#fff;
+}
 
-  <style>
-    body { font-family: Arial; margin:0; }
+/* HERO */
+.hero{
+  height:50vh;
+  background:url("images/banner pag dj.png") center/cover no-repeat;
+}
 
-    header {
-      background:#111;
-      color:#fff;
-      text-align:center;
-      padding:50px 20px;
-    }
+/* BUTTONS */
+.top-buttons{
+  text-align:center;
+  padding:20px;
+}
 
-    .btn {
-      display:inline-block;
-      padding:12px 20px;
-      margin:8px;
-      border-radius:5px;
-      text-decoration:none;
-      color:#fff;
-      font-weight:bold;
-    }
+.btn {
+  display:inline-block;
+  padding:12px 20px;
+  margin:8px;
+  border-radius:30px;
+  text-decoration:none;
+  color:#fff;
+  font-weight:bold;
+  transition:0.3s;
+}
 
-    .phone { background:#007bff; }
-    .whatsapp { background:#25D366; }
-    .gallery-btn { background:#e91e63; }
-    .video-btn { background:#ff5722; }
+.btn:hover{
+  transform:scale(1.05);
+}
 
-    section {
-      max-width:1100px;
-      margin:auto;
-      padding:40px 20px;
-    }
+.phone { background:#007bff; }
+.whatsapp { background:#25D366; }
+.gallery-btn { background:#e91e63; }
+.video-btn { background:#ff5722; }
+.back { background:#444; }
 
-    .hero-images {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:10px;
-    }
+/* FLOATING WHATSAPP */
+.floating-wa{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  padding:15px;
+  border-radius:50%;
+  font-size:22px;
+  text-decoration:none;
+  box-shadow:0 0 15px #25D366;
+  z-index:999;
+}
 
-    .hero-images img {
-      width:100%;
-      height:200px;
-      object-fit:cover;
-      border-radius:10px;
-    }
+/* SECTION */
+section {
+  max-width:1100px;
+  margin:auto;
+  padding:50px 20px;
+}
 
-    .pricing {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:20px;
-    }
+/* FADE IN */
+.fade{
+  opacity:0;
+  transform:translateY(30px);
+  transition:1s;
+}
 
-    .card {
-      border:1px solid #ddd;
-      border-radius:10px;
-      overflow:hidden;
-    }
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
 
-    .card img {
-      width:100%;
-      height:180px;
-      object-fit:cover;
-    }
+/* GALLERY */
+.hero-images {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:10px;
+}
 
-    .card-content { padding:20px; }
+.hero-images img {
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:10px;
+}
 
-    .price {
-      color:#007bff;
-      font-size:20px;
-      font-weight:bold;
-    }
+/* CARDS */
+.pricing {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
 
-    footer {
-      background:#111;
-      color:#fff;
-      text-align:center;
-      padding:20px;
-    }
-  </style>
+.card {
+  position:relative;
+  border-radius:12px;
+  overflow:hidden;
+  background:#111;
+  transition:0.4s;
+}
+
+.card:hover {
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 0 25px rgba(255,0,150,0.4);
+}
+
+.card img {
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.card-content { padding:20px; }
+
+.price {
+  color:#ffcc00;
+  font-size:20px;
+  font-weight:bold;
+}
+
+/* BADGES */
+.badge{
+  position:absolute;
+  top:10px;
+  left:10px;
+  padding:6px 12px;
+  border-radius:20px;
+  color:#fff;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.recommended{ background:#e91e63; }
+.vip{ background:#ff9800; }
+.custom{ background:#673ab7; }
+
+/* PERSONALIZAT */
+.highlight{
+  border:2px solid #673ab7;
+  box-shadow:0 0 20px #673ab7;
+}
+
+/* FOOTER */
+footer {
+  background:#000;
+  text-align:center;
+  padding:20px;
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <h1>DJ Nuntă & Evenimente Profesionale</h1>
-  <p>Sonorizare | Lumini | MC | Atmosferă garantată</p>
+<!-- BANNER -->
+<div class="hero"></div>
 
-  <a class="btn phone" href="tel:0721505739">Sună</a>
-  <a class="btn whatsapp" href="https://wa.me/40721505739" target="_blank">WhatsApp</a>
-
+<!-- BUTOANE -->
+<div class="top-buttons">
+  <a class="btn back" href="index.html">⬅ Înapoi</a>
+  <a class="btn phone" href="tel:0721505739">📞 Sună</a>
+  <a class="btn whatsapp" href="https://wa.me/40721505739">💬 WhatsApp</a>
   <br>
-
-  <!-- 🔥 LINKURI CORECTE -->
   <a class="btn gallery-btn" href="Galerie-dj.html">📸 Galerie DJ</a>
   <a class="btn video-btn" href="galerie Dj Vid.html">🎥 Video DJ</a>
+</div>
 
-</header>
-
-<section>
+<!-- IMAGINI -->
+<section class="fade">
   <h2>Atmosferă eveniment</h2>
 
   <div class="hero-images">
@@ -115,13 +187,14 @@
   </div>
 </section>
 
-<section>
+<!-- PACHETE -->
+<section class="fade">
   <h2>Pachete DJ</h2>
 
   <div class="pricing">
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7">
+      <img src="images/dj pachet standard.png">
       <div class="card-content">
         <h3>Standard</h3>
         <p>30-50 persoane</p>
@@ -130,7 +203,8 @@
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063">
+      <div class="badge recommended">⭐ RECOMANDAT</div>
+      <img src="images/dj pachet silver.png">
       <div class="card-content">
         <h3>Silver</h3>
         <p>50-100 persoane</p>
@@ -139,7 +213,8 @@
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622">
+      <div class="badge vip">👑 VIP</div>
+      <img src="images/dj pachet gold.png">
       <div class="card-content">
         <h3>Gold</h3>
         <p>100-150 persoane</p>
@@ -147,12 +222,42 @@
       </div>
     </div>
 
+    <div class="card highlight">
+      <div class="badge custom">🔥 PERSONALIZAT</div>
+      <img src="images/dj pachet personalizat.png">
+      <div class="card-content">
+        <h3>Pachetul tău Personalizat</h3>
+        <p>30 - 500 persoane</p>
+        <p>Acest pachet conține exact ce îți dorești și ce ai nevoie</p>
+        <p class="price">Preț: Personalizat</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/40721505739" class="floating-wa">💬</a>
+
 <footer>
-  © VIP Events Solutions
+© VIP Events Solutions
 </footer>
+
+<script>
+/* FADE IN ON SCROLL */
+const elements = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const position = el.getBoundingClientRect().top;
+    const screen = window.innerHeight;
+
+    if(position < screen - 100){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
