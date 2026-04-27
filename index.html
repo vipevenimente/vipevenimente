@@ -1,130 +1,148 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>VIP Events Solutions SRL | DJ, Foto Video, Cabina Foto, Efecte Speciale</title>
+<title>VIP Events Solutions SRL | DJ, Foto Video, Cabina Foto, Efecte Speciale</title>
 
-  <meta name="description" content="Servicii premium pentru evenimente: DJ nuntă, foto video, cabină foto și efecte speciale.">
+<meta name="description" content="Servicii premium pentru evenimente: DJ nuntă, foto video, cabină foto și efecte speciale.">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin:0;
-      padding:0;
-      background:#fff;
-      color:#333;
-    }
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin:0;
+  background:#0d0d0d;
+  color:#fff;
+}
 
-    header {
-      background:#111;
-      color:#fff;
-      text-align:center;
-      padding:20px;
-    }
+/* HEADER */
+header {
+  text-align:center;
+  padding:15px;
+  font-weight:bold;
+}
 
-    .hero {
-      height:320px;
-      background-image:url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622');
-      background-size:cover;
-      background-position:center;
-      position:relative;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
+/* HERO FIXED */
+.hero {
+  height:45vh;
+  background:url("images/banner index nou.png") center/contain no-repeat;
+  background-color:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
-    .overlay {
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,0.55);
-    }
+/* CONTENT HERO */
+.hero-content {
+  text-align:center;
+}
 
-    .hero-content {
-      position:relative;
-      color:#fff;
-      text-align:center;
-    }
+.hero h1 {
+  font-size:28px;
+  margin:0;
+}
 
-    .hero h1 {
-      font-size:32px;
-      margin:0;
-    }
+.hero p {
+  color:#ccc;
+}
 
-    .nav {
-      margin-top:15px;
-    }
+/* NAV */
+.nav {
+  margin-top:15px;
+}
 
-    .nav a {
-      display:inline-block;
-      margin:5px;
-      padding:8px 12px;
-      background:#fff;
-      color:#111;
-      text-decoration:none;
-      border-radius:5px;
-      font-size:13px;
-      font-weight:bold;
-    }
+.nav a {
+  display:inline-block;
+  margin:5px;
+  padding:8px 14px;
+  background:#1a1a1a;
+  color:#fff;
+  text-decoration:none;
+  border-radius:20px;
+  font-size:13px;
+  transition:0.3s;
+}
 
-    section {
-      max-width:1100px;
-      margin:auto;
-      padding:40px 20px;
-    }
+.nav a:hover {
+  background:#333;
+}
 
-    h2 {
-      text-align:center;
-      margin-bottom:20px;
-    }
+/* SECTION */
+section {
+  max-width:1100px;
+  margin:auto;
+  padding:50px 20px;
+}
 
-    .grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:15px;
-    }
+h2 {
+  text-align:center;
+  margin-bottom:25px;
+}
 
-    .card {
-      border:1px solid #eee;
-      border-radius:10px;
-      overflow:hidden;
-      background:#fff;
-      transition:0.2s;
-    }
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
 
-    .card:hover {
-      transform:scale(1.02);
-    }
+/* CARD */
+.card {
+  background:#111;
+  border-radius:10px;
+  overflow:hidden;
+  transition:0.3s;
+}
 
-    .card img {
-      width:100%;
-      height:150px;
-      object-fit:cover;
-    }
+.card:hover {
+  transform:translateY(-5px);
+}
 
-    .card-content {
-      padding:15px;
-    }
+/* IMAGES FIXED */
+.card img {
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  background:#000;
+}
 
-    .btn {
-      display:inline-block;
-      margin-top:10px;
-      padding:8px 12px;
-      background:#111;
-      color:#fff;
-      text-decoration:none;
-      border-radius:5px;
-      font-size:13px;
-    }
+.card-content {
+  padding:15px;
+  text-align:center;
+}
 
-    footer {
-      background:#111;
-      color:#fff;
-      text-align:center;
-      padding:20px;
-    }
-  </style>
+/* BUTTON */
+.btn {
+  display:inline-block;
+  margin-top:10px;
+  padding:8px 14px;
+  background:#222;
+  color:#fff;
+  text-decoration:none;
+  border-radius:20px;
+  font-size:13px;
+  transition:0.3s;
+}
+
+.btn:hover {
+  background:#444;
+}
+
+/* CONTACT */
+.contact {
+  text-align:center;
+  color:#ccc;
+}
+
+/* FOOTER */
+footer {
+  background:#000;
+  text-align:center;
+  padding:20px;
+  margin-top:30px;
+}
+</style>
 </head>
 
 <body>
@@ -135,9 +153,8 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="overlay"></div>
-
   <div class="hero-content">
+
     <h1>Evenimente Premium</h1>
     <p>DJ • Foto Video • Cabină Foto • Efecte Speciale</p>
 
@@ -145,7 +162,6 @@
       <a href="dj-nunta.html">DJ Nuntă</a>
       <a href="foto-video.html">Foto Video</a>
       <a href="cabina-foto.html">Cabină Foto</a>
-      <a href="images/gallery/gallery.html">Galerie Foto</a>
       <a href="efecte-speciale.html">Efecte</a>
       <a href="recenzii.html">Recenzii</a>
     </div>
@@ -156,62 +172,55 @@
 <!-- SERVICII -->
 <section>
 
-  <h2>Servicii</h2>
+<h2>Servicii</h2>
 
-  <div class="grid">
+<div class="grid">
 
-    <div class="card">
-      <img src="images/DJPAG.jpeg" alt="DJ nunta">
-      <div class="card-content">
-        <h3>DJ Nuntă</h3>
-        <a class="btn" href="dj-nunta.html">Detalii</a>
-      </div>
+  <div class="card">
+    <img src="images/DJPAG.jpeg">
+    <div class="card-content">
+      <h3>DJ Nuntă</h3>
+      <a class="btn" href="dj-nunta.html">Detalii</a>
     </div>
-
-    <div class="card">
-      <img src="images/activitati-foto-video.png" alt="foto video">
-      <div class="card-content">
-        <h3>Foto Video</h3>
-        <a class="btn" href="foto-video.html">Detalii</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="images/CABANA.jpeg" alt="cabina foto">
-      <div class="card-content">
-        <h3>Cabină Foto</h3>
-        <a class="btn" href="cabina-foto.html">Detalii</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="images/POZARIA.jpeg" alt="galerie foto">
-      <div class="card-content">
-        <h3>Galerie Foto</h3>
-        <a class="btn" href="images/gallery/gallery.html">Vezi Galeria</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="images/efecte speciale.jpeg" alt="efecte speciale">
-      <div class="card-content">
-        <h3>Efecte Speciale</h3>
-        <a class="btn" href="efecte-speciale.html">Detalii</a>
-      </div>
-    </div>
-
   </div>
+
+  <div class="card">
+    <img src="images/activitati-foto-video.png">
+    <div class="card-content">
+      <h3>Foto Video</h3>
+      <a class="btn" href="foto-video.html">Detalii</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/CABANA.jpeg">
+    <div class="card-content">
+      <h3>Cabină Foto</h3>
+      <a class="btn" href="cabina-foto.html">Detalii</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/efecte speciale.jpeg">
+    <div class="card-content">
+      <h3>Efecte Speciale</h3>
+      <a class="btn" href="efecte-speciale.html">Detalii</a>
+    </div>
+  </div>
+
+</div>
 
 </section>
 
 <!-- CONTACT -->
-<section style="text-align:center;">
+<section class="contact">
   <h2>Contact</h2>
-  <p>0721505739 | vipeventssolutions2022@gmail.com</p>
+  <p>0721505739</p>
+  <p>vipeventssolutions2022@gmail.com</p>
 </section>
 
 <footer>
-  © 2026 VIP Events Solutions SRL
+© 2026 VIP Events Solutions SRL
 </footer>
 
 </body>
