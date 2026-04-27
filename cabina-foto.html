@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Cabină Foto Nuntă | Photobooth VIP Events Solutions</title>
+<title>Cabină Foto | VIP Events Solutions</title>
 
-<meta name="description" content="Cabină foto pentru nunți și evenimente. Pachete complete cu accesorii, guest book și fotografii nelimitate.">
+<meta name="description" content="Cabină foto pentru nunți și evenimente.">
 
 <style>
 body{
@@ -15,71 +15,51 @@ body{
   background:#fff;
 }
 
-/* HERO BANNER */
+/* HERO (banner mai mic) */
 .hero{
-  height:100vh;
+  height:50vh;
   background:url("images/banner cabina.jpeg") center/cover no-repeat;
+}
+
+/* BUTOANE */
+.top-buttons{
   display:flex;
-  align-items:center;
-  padding-left:60px;
-  color:white;
-  position:relative;
-}
-
-.hero::after{
-  content:"";
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.55);
-  top:0;
-  left:0;
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:600px;
-}
-
-.hero h1{
-  font-size:60px;
-  margin:0;
-  letter-spacing:2px;
-}
-
-.hero h2{
-  font-size:40px;
-  color:#ff4da6;
-  margin:10px 0;
-}
-
-.hero p{
-  font-size:18px;
-  margin-bottom:20px;
+  justify-content:center;
+  gap:15px;
+  padding:20px;
+  flex-wrap:wrap;
 }
 
 .btn{
-  display:inline-block;
-  padding:12px 25px;
-  border:2px solid #ffd700;
+  padding:12px 20px;
   border-radius:30px;
-  color:#ffd700;
   text-decoration:none;
   font-weight:bold;
   transition:0.3s;
+  color:white;
+}
+
+.whatsapp{
+  background:#25D366;
+}
+
+.phone{
+  background:#007bff;
+}
+
+.back{
+  background:#444;
 }
 
 .btn:hover{
-  background:#ffd700;
-  color:#000;
+  opacity:0.8;
 }
 
 /* SECTION */
 section{
   max-width:1100px;
   margin:auto;
-  padding:50px 20px;
+  padding:40px 20px;
 }
 
 h2{
@@ -99,7 +79,6 @@ h2{
   overflow:hidden;
   box-shadow:0 5px 20px rgba(0,0,0,0.1);
   transition:0.3s;
-  background:#fff;
 }
 
 .card:hover{
@@ -146,15 +125,14 @@ footer{
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-content">
-    <h1>CABINĂ FOTO</h1>
-    <h2>Distracție la maxim!</h2>
-    <p>Zâmbește. Distrează-te. Creează amintiri!</p>
+<!-- BANNER -->
+<div class="hero"></div>
 
-    <a href="#" class="btn">Rezervă acum</a>
-  </div>
+<!-- BUTOANE -->
+<div class="top-buttons">
+  <a href="index.html" class="btn back">⬅ Înapoi</a>
+  <a href="tel:0721505739" class="btn phone">📞 Sună acum</a>
+  <a href="https://wa.me/40721505739" class="btn whatsapp">💬 WhatsApp</a>
 </div>
 
 <!-- PACKAGES -->
