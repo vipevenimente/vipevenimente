@@ -21,32 +21,56 @@ body {
   background-color:#000;
 }
 
-/* BUTTONS */
-.top-buttons{
+/* NAV (CA INDEX) */
+.nav {
   text-align:center;
-  padding:25px;
+  padding:25px 10px 10px;
 }
 
-.btn{
+.nav a {
   display:inline-block;
-  margin:6px;
-  padding:10px 18px;
-  border-radius:30px;
+  margin:8px;
+  padding:12px 20px;
   text-decoration:none;
+  border-radius:30px;
+  font-size:14px;
+  font-weight:500;
   color:#fff;
-  font-size:13px;
-  background:#1a1a1a;
+  background:linear-gradient(145deg, #1a1a1a, #222);
   border:1px solid #333;
+  box-shadow:0 4px 15px rgba(0,0,0,0.4);
   transition:0.3s;
 }
 
-.btn:hover{
-  background:#333;
+.nav a:hover {
+  background:linear-gradient(145deg, #2a2a2a, #333);
+  border-color:#555;
+  transform:translateY(-2px);
 }
 
-.phone { background:#007bff; }
-.whatsapp { background:#25D366; }
-.back { background:#222; }
+/* HIGHLIGHT CABINA */
+.nav a:nth-child(3) {
+  background:linear-gradient(145deg, #ff9800, #cc7a00);
+  border:none;
+  color:#000;
+}
+
+/* GALERIE BUTTON */
+.gallery-btn{
+  text-align:center;
+  margin-top:10px;
+}
+
+.gallery-btn a{
+  display:inline-block;
+  padding:10px 18px;
+  background:#222;
+  border-radius:25px;
+  text-decoration:none;
+  color:#fff;
+  font-size:13px;
+  border:1px solid #333;
+}
 
 /* SECTION */
 section{
@@ -79,7 +103,7 @@ h2{
   transform:translateY(-5px);
 }
 
-/* IMAGINI FIX */
+/* IMAGINI */
 .card img{
   width:100%;
   height:auto;
@@ -99,15 +123,34 @@ h2{
 
 /* LIST */
 ul{
-  margin-top:15px;
-  padding-left:0;
   list-style:none;
+  padding:0;
+  margin-top:15px;
 }
 
 ul li{
   margin-bottom:8px;
   color:#ccc;
 }
+
+/* CONTACT JOS */
+.contact-buttons{
+  text-align:center;
+  padding:30px;
+}
+
+.contact-buttons a{
+  display:inline-block;
+  margin:8px;
+  padding:12px 20px;
+  border-radius:30px;
+  text-decoration:none;
+  color:#fff;
+  font-weight:bold;
+}
+
+.phone { background:#007bff; }
+.whatsapp { background:#25D366; }
 
 /* FOOTER */
 footer{
@@ -123,11 +166,18 @@ footer{
 <!-- BANNER -->
 <div class="hero"></div>
 
-<!-- BUTOANE -->
-<div class="top-buttons">
-  <a href="index.html" class="btn back">⬅ Înapoi</a>
-  <a href="tel:0721505739" class="btn phone">📞 Sună</a>
-  <a href="https://wa.me/40721505739" class="btn whatsapp">💬 WhatsApp</a>
+<!-- NAV -->
+<div class="nav">
+  <a href="dj-nunta.html">DJ Nuntă</a>
+  <a href="foto-video.html">Foto Video</a>
+  <a href="cabina-foto.html">Cabină Foto</a>
+  <a href="efecte-speciale.html">Efecte</a>
+  <a href="recenzii.html">Recenzii</a>
+</div>
+
+<!-- GALERIE -->
+<div class="gallery-btn">
+  <a href="Galerie Cabina.html">📸 Galerie Cabină</a>
 </div>
 
 <!-- PACHETE -->
@@ -188,6 +238,12 @@ footer{
 </div>
 
 </section>
+
+<!-- CONTACT -->
+<div class="contact-buttons">
+  <a href="tel:0721505739" class="phone">📞 Sună</a>
+  <a href="https://wa.me/40721505739" class="whatsapp">💬 WhatsApp</a>
+</div>
 
 <footer>
 © VIP Events Solutions
