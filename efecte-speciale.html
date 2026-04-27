@@ -14,11 +14,20 @@ body {
   color:#fff;
 }
 
-/* HERO */
+/* HERO FIXED */
 .hero{
-  height:40vh;
-  background:url("images/banner efecte.png") center/contain no-repeat;
-  background-color:#000;
+  height:42vh;
+  margin-top:20px;
+  background:url("images/banner efecte.png") center/cover no-repeat;
+  position:relative;
+}
+
+/* FADE */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to right, #0d0d0d 5%, transparent 25%, transparent 75%, #0d0d0d 95%);
 }
 
 /* NAV */
@@ -31,13 +40,11 @@ body {
   display:inline-block;
   margin:8px;
   padding:12px 20px;
-  text-decoration:none;
   border-radius:30px;
-  font-size:14px;
+  text-decoration:none;
   color:#fff;
   background:linear-gradient(145deg,#1a1a1a,#222);
   border:1px solid #333;
-  box-shadow:0 4px 15px rgba(0,0,0,0.4);
 }
 
 .nav a:nth-child(5){
@@ -78,11 +85,19 @@ h2{
   transform:translateY(-5px);
 }
 
-/* IMG */
-.card img{
-  width:100%;
+/* IMAGE FIX */
+.card-img{
   height:180px;
-  object-fit:cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#000;
+}
+
+.card-img img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
 }
 
 .card-content{
@@ -107,7 +122,7 @@ ul li{
   color:#ccc;
 }
 
-/* TEXT IMPORTANT */
+/* NOTICE */
 .notice{
   text-align:center;
   color:#bbb;
@@ -163,51 +178,50 @@ footer{
 <div class="pricing">
 
 <div class="card">
-<img src="images/standard.png">
+<div class="card-img"><img src="images/fum greu.jpeg"></div>
 <div class="card-content">
 <h3>Standard</h3>
 <p class="price">250 EUR</p>
 <ul>
 <li>Fum greu dansul mirilor</li>
-<li>4 artificii valsul mirilor</li>
+<li>4 artificii vals</li>
 <li>Durată 25 sec</li>
 </ul>
 </div>
 </div>
 
 <div class="card">
-<img src="images/rotative.png">
+<div class="card-img"><img src="images/artificii interior.jpeg"></div>
 <div class="card-content">
 <h3>Premium</h3>
 <p class="price">350 EUR</p>
 <ul>
-<li>Fum greu dansul mirilor</li>
-<li>4 artificii rotative</li>
-<li>Durată 25 sec</li>
+<li>Fum greu</li>
+<li>Artificii rotative</li>
+<li>Durată 25-35 sec</li>
 </ul>
 </div>
 </div>
 
 <div class="card">
-<img src="images/2 masini rotative.png">
+<div class="card-img"><img src="images/fum greu.jpeg"></div>
 <div class="card-content">
 <h3>Deluxe</h3>
 <p class="price">450 EUR</p>
 <ul>
 <li>2 mașini fum greu</li>
-<li>4 artificii rotative</li>
-<li>Durată 25 sec</li>
+<li>Artificii rotative</li>
 </ul>
 </div>
 </div>
 
 <div class="card">
-<img src="images/fum si spark.png">
+<div class="card-img"><img src="images/sparkular.jpeg"></div>
 <div class="card-content">
 <h3>Platinum</h3>
 <p class="price">500 EUR</p>
 <ul>
-<li>Fum greu dansul mirilor</li>
+<li>Fum greu</li>
 <li>Artificii sparkulare</li>
 </ul>
 </div>
@@ -223,12 +237,12 @@ footer{
 <div class="pricing">
 
 <div class="card">
-<img src="images/exterior.png">
+<div class="card-img"><img src="images/artificii exterior.jpeg"></div>
 <div class="card-content">
 <h3>Pachet Exterior</h3>
 <p class="price">300 EUR</p>
 <ul>
-<li>Artificii tip F2-F4</li>
+<li>Artificii F2-F4</li>
 <li>Pirotehnician autorizat</li>
 <li>Autorizații incluse</li>
 <li>Durată 1 minut</li>
@@ -239,32 +253,31 @@ footer{
 </div>
 
 <div class="notice">
-Pachetele de efecte speciale și artificii de exterior sunt cu caracter orientativ.  
-Din punct de vedere pirotehnic putem crea absolut orice moment, în funcție de nevoile dvs și de permisivitatea locației.  
-Prețurile se stabilesc în funcție de solicitările clientului.
+Pachetele sunt orientative. Putem crea orice moment în funcție de nevoile dvs și locație.
+Prețurile se stabilesc personalizat.
 </div>
 
 </section>
 
-<!-- ARTIFICII DE ZI -->
+<!-- ZI -->
 <section>
 <h2>Artificii de Zi</h2>
 
 <div class="pricing">
 
 <div class="card">
-<img src="images/art de zi single.png">
+<div class="card-img"><img src="images/artificii zi.jpeg"></div>
 <div class="card-content">
 <h3>Single Shot</h3>
-<p class="price">60 EUR / buc</p>
+<p class="price">60 EUR</p>
 </div>
 </div>
 
 <div class="card">
-<img src="images/25 focuri.png">
+<div class="card-img"><img src="images/artificii zi.jpeg"></div>
 <div class="card-content">
 <h3>25 focuri</h3>
-<p class="price">90 EUR / buc</p>
+<p class="price">90 EUR</p>
 </div>
 </div>
 
@@ -278,13 +291,13 @@ Prețurile se stabilesc în funcție de solicitările clientului.
 <div class="pricing">
 
 <div class="card">
-<img src="images/co2.jpeg">
+<div class="card-img"><img src="images/co2.jpeg"></div>
 <div class="card-content">
 <h3>Pistol CO2</h3>
 <p class="price">270 EUR</p>
 <ul>
 <li>Pistol CO2</li>
-<li>2 butelii CO2 incluse</li>
+<li>2 butelii incluse</li>
 </ul>
 </div>
 </div>
