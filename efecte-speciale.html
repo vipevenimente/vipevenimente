@@ -14,7 +14,7 @@ body {
   color:#fff;
 }
 
-/* HERO FIXED */
+/* HERO */
 .hero{
   height:42vh;
   margin-top:20px;
@@ -22,7 +22,6 @@ body {
   position:relative;
 }
 
-/* FADE */
 .hero::before{
   content:"";
   position:absolute;
@@ -72,6 +71,12 @@ h2{
   gap:20px;
 }
 
+/* SINGLE CARD FIX */
+.single-card{
+  max-width:350px;
+  margin:0 auto;
+}
+
 /* CARD */
 .card{
   background:#111;
@@ -85,7 +90,7 @@ h2{
   transform:translateY(-5px);
 }
 
-/* IMAGE FIX */
+/* IMG FIX */
 .card-img{
   height:180px;
   display:flex;
@@ -235,8 +240,7 @@ footer{
 <h2>Artificii Exterior</h2>
 
 <div class="pricing">
-
-<div class="card">
+<div class="card single-card">
 <div class="card-img"><img src="images/exterior.png"></div>
 <div class="card-content">
 <h3>Pachet Exterior</h3>
@@ -249,7 +253,6 @@ footer{
 </ul>
 </div>
 </div>
-
 </div>
 
 <div class="notice">
@@ -265,7 +268,7 @@ Prețurile se stabilesc personalizat.
 
 <div class="pricing">
 
-<div class="card">
+<div class="card single-card">
 <div class="card-img"><img src="images/art de zi single.png"></div>
 <div class="card-content">
 <h3>Single Shot</h3>
@@ -273,7 +276,7 @@ Prețurile se stabilesc personalizat.
 </div>
 </div>
 
-<div class="card">
+<div class="card single-card">
 <div class="card-img"><img src="images/25 focuri.png"></div>
 <div class="card-content">
 <h3>25 focuri</h3>
@@ -290,7 +293,7 @@ Prețurile se stabilesc personalizat.
 
 <div class="pricing">
 
-<div class="card">
+<div class="card single-card">
 <div class="card-img"><img src="images/co2.jpeg"></div>
 <div class="card-content">
 <h3>Pistol CO2</h3>
