@@ -1,170 +1,226 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Cabină Foto Nuntă | Photobooth VIP Events Solutions</title>
+<title>Cabină Foto Nuntă | Photobooth VIP Events Solutions</title>
 
-  <meta name="description" content="Cabină foto pentru nunți și evenimente. Pachete complete cu accesorii, guest book și fotografii nelimitate.">
+<meta name="description" content="Cabină foto pentru nunți și evenimente. Pachete complete cu accesorii, guest book și fotografii nelimitate.">
 
-  <meta name="robots" content="index, follow">
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#fff;
+}
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin:0;
-      background:#fff;
-      color:#333;
-    }
+/* HERO BANNER */
+.hero{
+  height:100vh;
+  background:url("images/banner cabina.jpeg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  padding-left:60px;
+  color:white;
+  position:relative;
+}
 
-    header {
-      background:#111;
-      color:#fff;
-      text-align:center;
-      padding:50px 20px;
-    }
+.hero::after{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.55);
+  top:0;
+  left:0;
+}
 
-    section {
-      max-width:1100px;
-      margin:auto;
-      padding:40px 20px;
-    }
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:600px;
+}
 
-    h2 {
-      text-align:center;
-      margin-bottom:20px;
-    }
+.hero h1{
+  font-size:60px;
+  margin:0;
+  letter-spacing:2px;
+}
 
-    .pricing {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:20px;
-    }
+.hero h2{
+  font-size:40px;
+  color:#ff4da6;
+  margin:10px 0;
+}
 
-    .card {
-      border:1px solid #eee;
-      border-radius:10px;
-      overflow:hidden;
-      background:#fff;
-      transition:0.3s;
-    }
+.hero p{
+  font-size:18px;
+  margin-bottom:20px;
+}
 
-    .card:hover {
-      transform:scale(1.03);
-    }
+.btn{
+  display:inline-block;
+  padding:12px 25px;
+  border:2px solid #ffd700;
+  border-radius:30px;
+  color:#ffd700;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
 
-    .card img {
-      width:100%;
-      height:240px;
-      object-fit:cover;
-    }
+.btn:hover{
+  background:#ffd700;
+  color:#000;
+}
 
-    .card-content {
-      padding:20px;
-    }
+/* SECTION */
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:50px 20px;
+}
 
-    .price {
-      font-size:22px;
-      color:#007bff;
-      font-weight:bold;
-    }
+h2{
+  text-align:center;
+  margin-bottom:30px;
+}
 
-    ul {
-      margin-top:15px;
-      padding-left:20px;
-    }
+/* CARDS */
+.pricing{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
 
-    ul li {
-      margin-bottom:6px;
-    }
+.card{
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+  transition:0.3s;
+  background:#fff;
+}
 
-    footer {
-      background:#111;
-      color:#fff;
-      text-align:center;
-      padding:20px;
-      margin-top:40px;
-    }
-  </style>
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.card img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:20px;
+}
+
+.price{
+  font-size:22px;
+  color:#ff4da6;
+  font-weight:bold;
+}
+
+/* LIST */
+ul{
+  margin-top:15px;
+  padding-left:20px;
+}
+
+ul li{
+  margin-bottom:6px;
+  font-size:14px;
+}
+
+/* FOOTER */
+footer{
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <h1>Cabină Foto Evenimente</h1>
-  <p>Distracție instant • Amintiri pe loc • Photobooth profesional</p>
-</header>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>CABINĂ FOTO</h1>
+    <h2>Distracție la maxim!</h2>
+    <p>Zâmbește. Distrează-te. Creează amintiri!</p>
 
+    <a href="#" class="btn">Rezervă acum</a>
+  </div>
+</div>
+
+<!-- PACKAGES -->
 <section>
 
-  <h2>Pachete Cabină Foto</h2>
+<h2>Pachete Cabină Foto</h2>
 
-  <div class="pricing">
+<div class="pricing">
 
-    <!-- 4 ORE -->
-    <div class="card">
-      <img src="images/pachet standard.jpeg" alt="cabina foto nunta">
-      <div class="card-content">
-        <h3>4 ore</h3>
-        <p class="price">1300 lei</p>
+<div class="card">
+  <img src="images/pachet standard.jpeg" alt="Cabina foto 4 ore">
+  <div class="card-content">
+    <h3>4 ore</h3>
+    <p class="price">1300 lei</p>
 
-        <ul>
-          <li>2 variante de fundal</li>
-          <li>Template personalizat</li>
-          <li>Magnet și plic la fiecare poză</li>
-          <li>Guest book inclus</li>
-          <li>Accesorii amuzante</li>
-          <li>Pozele disponibile în cloud</li>
-        </ul>
-
-      </div>
-    </div>
-
-    <!-- 6 ORE -->
-    <div class="card">
-      <img src="images/pachet premiun.jpeg" alt="cabina foto nunta">
-      <div class="card-content">
-        <h3>6 ore</h3>
-        <p class="price">1600 lei</p>
-
-        <ul>
-          <li>2 variante de fundal</li>
-          <li>Template personalizat</li>
-          <li>Magnet și plic la fiecare poză</li>
-          <li>Guest book inclus</li>
-          <li>Accesorii amuzante</li>
-          <li>Pozele disponibile în cloud</li>
-        </ul>
-
-      </div>
-    </div>
-
-    <!-- 8 ORE -->
-    <div class="card">
-      <img src="images/pachet platinum.jpeg" alt="cabina foto nunta">
-      <div class="card-content">
-        <h3>8 ore</h3>
-        <p class="price">2000 lei</p>
-
-        <ul>
-          <li>2 variante de fundal</li>
-          <li>Template personalizat</li>
-          <li>Magnet și plic la fiecare poză</li>
-          <li>Guest book inclus</li>
-          <li>Accesorii amuzante</li>
-          <li>Pozele disponibile în cloud</li>
-        </ul>
-
-      </div>
-    </div>
+    <ul>
+      <li>Template personalizat</li>
+      <li>Accesorii amuzante</li>
+      <li>Număr nelimitat de printuri</li>
+      <li>Plic și magnet la fiecare poză</li>
+      <li><strong>Guestbook cadou</strong></li>
+    </ul>
 
   </div>
+</div>
+
+<div class="card">
+  <img src="images/pachet premiun.jpeg" alt="Cabina foto 6 ore">
+  <div class="card-content">
+    <h3>6 ore</h3>
+    <p class="price">1600 lei</p>
+
+    <ul>
+      <li>Template personalizat</li>
+      <li>Accesorii amuzante</li>
+      <li>Număr nelimitat de printuri</li>
+      <li>Plic și magnet la fiecare poză</li>
+      <li><strong>Guestbook cadou</strong></li>
+    </ul>
+
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/pachet platinum.jpeg" alt="Cabina foto 8 ore">
+  <div class="card-content">
+    <h3>8 ore</h3>
+    <p class="price">2000 lei</p>
+
+    <ul>
+      <li>Template personalizat</li>
+      <li>Accesorii amuzante</li>
+      <li>Număr nelimitat de printuri</li>
+      <li>Plic și magnet la fiecare poză</li>
+      <li><strong>Guestbook cadou</strong></li>
+    </ul>
+
+  </div>
+</div>
+
+</div>
 
 </section>
 
 <footer>
-  © 2026 VIP Events Solutions SRL
+© 2026 VIP Events Solutions SRL
 </footer>
 
 </body>
