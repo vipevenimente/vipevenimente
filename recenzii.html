@@ -14,19 +14,12 @@ body {
   color:#fff;
 }
 
-/* HERO FULL WIDTH */
+/* HERO FIXED */
 .hero{
-  height:40vh;
-  background:url("images/RECENZII.png") center/cover no-repeat;
-  position:relative;
-}
-
-/* FADE PREMIUM */
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to right, #0d0d0d 5%, transparent 25%, transparent 75%, #0d0d0d 95%);
+  height:35vh;
+  margin-top:20px;
+  background:url("images/RECENZII.png") center/contain no-repeat;
+  background-color:#000;
 }
 
 /* NAV */
@@ -69,7 +62,7 @@ section{
   padding:50px 20px;
 }
 
-/* GOOGLE BUTTON */
+/* GOOGLE BTN */
 .google-btn{
   text-align:center;
   margin-bottom:40px;
