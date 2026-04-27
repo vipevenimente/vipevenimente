@@ -1,189 +1,196 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Foto Video Nuntă | Filmare Evenimente Profesionale | VIP Events Solutions</title>
+<title>Foto Video | VIP Events Solutions</title>
 
-  <meta name="description" content="Servicii foto video profesionale pentru nunți și evenimente. Pachete începând de la 1200 EUR. Preț final stabilit în urma consultanței.">
+<style>
+body {
+  font-family: Arial;
+  margin:0;
+  background:#0d0d0d;
+  color:#fff;
+}
 
-  <meta name="keywords" content="foto video nunta, filmare evenimente, videograf nunta, fotograf nunta profesional">
+/* HERO */
+.hero{
+  height:40vh;
+  background:url("images/banner foto video.png") center/contain no-repeat;
+  background-color:#000;
+}
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin:0;
-      padding:0;
-      background:#fff;
-      color:#333;
-    }
+/* NAV */
+.nav {
+  text-align:center;
+  padding:25px 10px 10px;
+}
 
-    header {
-      background:#111;
-      color:#fff;
-      text-align:center;
-      padding:60px 20px;
-    }
+.nav a {
+  display:inline-block;
+  margin:8px;
+  padding:12px 20px;
+  text-decoration:none;
+  border-radius:30px;
+  font-size:14px;
+  font-weight:500;
+  color:#fff;
+  background:linear-gradient(145deg, #1a1a1a, #222);
+  border:1px solid #333;
+  box-shadow:0 4px 15px rgba(0,0,0,0.4);
+  transition:0.3s;
+}
 
-    header h1 {
-      margin:0;
-      font-size:34px;
-    }
+.nav a:hover {
+  background:linear-gradient(145deg, #2a2a2a, #333);
+  border-color:#555;
+  transform:translateY(-2px);
+}
 
-    header p {
-      margin-top:10px;
-      opacity:0.8;
-    }
+/* HIGHLIGHT FOTO VIDEO */
+.nav a:nth-child(3) {
+  background:linear-gradient(145deg, #ff9800, #cc7a00);
+  border:none;
+  color:#000;
+}
 
-    section {
-      max-width:1100px;
-      margin:auto;
-      padding:40px 20px;
-    }
+/* GALERIE */
+.gallery-btn{
+  text-align:center;
+  margin-top:10px;
+}
 
-    h2 {
-      text-align:center;
-      margin-bottom:20px;
-    }
+.gallery-btn a{
+  display:inline-block;
+  padding:10px 18px;
+  background:#222;
+  border-radius:25px;
+  text-decoration:none;
+  color:#fff;
+  font-size:13px;
+  border:1px solid #333;
+}
 
-    /* HERO IMAGE */
-    .hero-img {
-      width:100%;
-      height:350px;
-      object-fit:cover;
-      border-radius:10px;
-    }
+/* SECTION */
+section{
+  max-width:900px;
+  margin:auto;
+  padding:60px 20px;
+  text-align:center;
+}
 
-    /* INFO BOX */
-    .info {
-      background:#f7f7f7;
-      padding:20px;
-      border-radius:10px;
-      margin-top:20px;
-      text-align:center;
-    }
+h2{
+  margin-bottom:20px;
+}
 
-    .price {
-      font-size:26px;
-      color:#007bff;
-      font-weight:bold;
-      margin-top:10px;
-    }
+.description{
+  color:#ccc;
+  font-size:16px;
+  line-height:1.6;
+  margin-bottom:25px;
+}
 
-    /* GALLERY */
-    .gallery {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:15px;
-      margin-top:30px;
-    }
+.features{
+  list-style:none;
+  padding:0;
+  margin:20px 0;
+}
 
-    .gallery img {
-      width:100%;
-      height:200px;
-      object-fit:cover;
-      border-radius:10px;
-    }
+.features li{
+  margin:10px 0;
+  color:#ddd;
+}
 
-    /* CTA */
-    .cta {
-      text-align:center;
-      margin-top:30px;
-    }
+.price{
+  margin-top:25px;
+  font-size:20px;
+  color:#ffcc00;
+  font-weight:bold;
+}
 
-    .btn {
-      display:inline-block;
-      padding:12px 20px;
-      margin:10px;
-      background:#111;
-      color:#fff;
-      text-decoration:none;
-      border-radius:5px;
-    }
+/* CONTACT */
+.contact-buttons{
+  text-align:center;
+  padding:30px;
+}
 
-    footer {
-      background:#111;
-      color:#fff;
-      text-align:center;
-      padding:20px;
-      margin-top:40px;
-    }
-  </style>
+.contact-buttons a{
+  display:inline-block;
+  margin:8px;
+  padding:12px 20px;
+  border-radius:30px;
+  text-decoration:none;
+  color:#fff;
+  font-weight:bold;
+}
+
+.phone { background:#007bff; }
+.whatsapp { background:#25D366; }
+
+/* FOOTER */
+footer{
+  background:#000;
+  text-align:center;
+  padding:20px;
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <h1>Foto Video Evenimente</h1>
-  <p>Amintiri cinematice pentru nunta ta</p>
-</header>
+<!-- BANNER -->
+<div class="hero"></div>
 
-<section>
-
-  <img class="hero-img" 
-       src="https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b?auto=format&fit=crop&w=1200&q=60"
-       alt="echipa foto video nunta filmare profesionala">
-
-  <h2>Servicii Foto Video Profesionale</h2>
-
-  <div class="info">
-
-    <p>
-      Echipa noastră surprinde cele mai importante momente ale evenimentului tău într-un stil cinematic modern,
-      cu echipamente profesionale și editare premium.
-    </p>
-
-    <div class="price">
-      Pachetele pornesc de la 1200 EUR
-    </div>
-
-    <p>
-      Prețul final se stabilește în urma unei întâlniri cu un consultant VIP Events Solutions,
-      în funcție de durata evenimentului, locație și cerințe personalizate.
-    </p>
-
-  </div>
-
-</section>
+<!-- NAV -->
+<div class="nav">
+  <a href="index.html">🏠 Home</a>
+  <a href="dj-nunta.html">DJ Nuntă</a>
+  <a href="foto-video.html">Foto Video</a>
+  <a href="cabina-foto.html">Cabină Foto</a>
+  <a href="efecte-speciale.html">Efecte</a>
+  <a href="recenzii.html">Recenzii</a>
+</div>
 
 <!-- GALERIE -->
+<div class="gallery-btn">
+  <a href="Galerie Foto Video.html">📸 Galerie Foto Video</a>
+</div>
+
+<!-- CONTENT -->
 <section>
 
-  <h2>Momente surprinse</h2>
+<h2>Servicii Foto Video</h2>
 
-  <div class="gallery">
+<p class="description">
+Pachete 100% personalizate, care se mulează perfect nevoilor dumneavoastră. 
+Oferim calitate, nu cantitate, surprinzând fiecare moment într-un mod profesionist și autentic.
+</p>
 
-    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=60"
-         alt="fotograf nunta profesional">
+<ul class="features">
+  <li>Filmări 4K</li>
+  <li>Montaj video cinematic</li>
+  <li>Clipuri „Best Moments”</li>
+  <li>Personal foarte bine pregătit</li>
+  <li>Pictoriale foto de revistă</li>
+  <li>Stick-uri personalizate premium</li>
+  <li>Albume foto premium</li>
+</ul>
 
-    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=900&q=60"
-         alt="filmare eveniment nunta">
-
-    <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&w=900&q=60"
-         alt="echipa video nunta camera profesionala">
-
-    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=900&q=60"
-         alt="eveniment nunta filmare atmosfera">
-
-  </div>
-
-</section>
-
-<!-- CTA -->
-<section class="cta">
-
-  <h2>Rezervă consultanță</h2>
-
-  <p>Discută cu un consultant VIP Events Solutions pentru oferta ta personalizată.</p>
-
-  <a class="btn" href="tel:0721505739">Sună acum</a>
-  <a class="btn" href="https://wa.me/40721505739">WhatsApp</a>
+<p class="price">
+Prețuri începând de la 1300 EUR
+</p>
 
 </section>
+
+<!-- CONTACT -->
+<div class="contact-buttons">
+  <a href="tel:0721505739" class="phone">📞 Sună</a>
+  <a href="https://wa.me/40721505739" class="whatsapp">💬 WhatsApp</a>
+</div>
 
 <footer>
-  © 2026 VIP Events Solutions SRL - Foto Video Profesionale
+© VIP Events Solutions
 </footer>
 
 </body>
