@@ -4,85 +4,84 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Recenzii Clienți | VIP Events Solutions</title>
+<title>Recenzii | VIP Events Solutions</title>
 
 <style>
-body{
+body {
+  font-family: Arial;
   margin:0;
-  font-family:Arial, sans-serif;
   background:#0d0d0d;
   color:#fff;
 }
 
 /* HERO */
 .hero{
-  padding:60px 20px;
+  height:40vh;
+  background:url("images/RECENZII.png") center/contain no-repeat;
+  background-color:#000;
+}
+
+/* NAV */
+.nav {
   text-align:center;
-  background:#000;
+  padding:25px 10px 10px;
 }
 
-.hero h1{
-  margin:0;
-}
-
-.hero p{
-  color:#ccc;
-}
-
-/* RATING */
-.rating{
-  font-size:22px;
-  margin:15px 0;
-  color:#ffcc00;
-}
-
-/* BUTTONS */
-.btn{
+.nav a {
   display:inline-block;
-  margin:10px;
+  margin:8px;
   padding:12px 20px;
-  border-radius:30px;
   text-decoration:none;
+  border-radius:30px;
+  font-size:14px;
   color:#fff;
-  background:#333;
-  transition:0.3s;
+  background:linear-gradient(145deg,#1a1a1a,#222);
+  border:1px solid #333;
+  box-shadow:0 4px 15px rgba(0,0,0,0.4);
 }
 
-.btn:hover{
-  background:#555;
-}
-
-.google{
-  background:#4285F4;
-}
-
-.review{
-  background:#25D366;
+/* HIGHLIGHT RECENZII */
+.nav a:nth-child(6){
+  background:linear-gradient(145deg,#ff9800,#cc7a00);
+  color:#000;
+  border:none;
 }
 
 /* SECTION */
 section{
-  max-width:1000px;
+  max-width:900px;
   margin:auto;
-  padding:40px 20px;
+  padding:50px 20px;
 }
 
-/* REVIEWS */
-.reviews{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:20px;
+/* GOOGLE BTN */
+.google-btn{
+  display:block;
+  text-align:center;
+  margin:20px auto 40px;
 }
 
-.card{
+.google-btn a{
+  display:inline-block;
+  padding:12px 20px;
+  background:#4285F4;
+  color:#fff;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* REVIEW */
+.review{
   background:#111;
   padding:20px;
   border-radius:10px;
-  transition:0.3s;
+  margin-bottom:20px;
+  border:1px solid #222;
 }
 
-.card:hover{
-  transform:translateY(-5px);
+.review h4{
+  margin:0 0 10px;
 }
 
 .stars{
@@ -90,11 +89,23 @@ section{
   margin-bottom:10px;
 }
 
-.name{
-  font-weight:bold;
-  margin-top:10px;
-  color:#ccc;
+/* CONTACT */
+.contact-buttons{
+  text-align:center;
+  padding:30px;
 }
+
+.contact-buttons a{
+  display:inline-block;
+  margin:8px;
+  padding:12px 20px;
+  border-radius:30px;
+  text-decoration:none;
+  color:#fff;
+}
+
+.phone { background:#007bff; }
+.whatsapp { background:#25D366; }
 
 /* FOOTER */
 footer{
@@ -107,66 +118,54 @@ footer{
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>Recenzii Clienți</h1>
-  <p>Experiențele celor care au ales VIP Events Solutions</p>
+<!-- BANNER -->
+<div class="hero"></div>
 
-  <div class="rating">⭐ 4.9 din 5 (50+ recenzii)</div>
+<!-- NAV -->
+<div class="nav">
+  <a href="index.html">🏠 Home</a>
+  <a href="dj-nunta.html">DJ Nuntă</a>
+  <a href="foto-video.html">Foto Video</a>
+  <a href="cabina-foto.html">Cabină Foto</a>
+  <a href="efecte-speciale.html">Efecte</a>
+  <a href="recenzii.html">Recenzii</a>
+</div>
 
-  <a href="https://share.google/v7hGA8hCxTuUtBJQR" target="_blank" class="btn google">
-    ⭐ Vezi recenziile pe Google
-  </a>
+<!-- GOOGLE -->
+<section>
 
-  <a href="https://share.google/v7hGA8hCxTuUtBJQR" target="_blank" class="btn review">
-    ✍️ Lasă o recenzie
+<div class="google-btn">
+  <a href="https://share.google/v7hGA8hCxTuUtBJQR" target="_blank">
+    ⭐ Vezi toate recenziile pe Google
   </a>
 </div>
 
-<!-- REVIEWS -->
-<section>
+<!-- RECENZII -->
+<div class="review">
+  <h4>Andrei Popescu</h4>
+  <div class="stars">★★★★★</div>
+  <p>Totul a fost perfect! DJ-ul a făcut atmosferă incredibilă, iar invitații au fost super încântați.</p>
+</div>
 
-<div class="reviews">
+<div class="review">
+  <h4>Maria Ionescu</h4>
+  <div class="stars">★★★★★</div>
+  <p>Servicii impecabile! Cabina foto a fost atracția serii. Recomand cu încredere!</p>
+</div>
 
-  <div class="card">
-    <div class="stars">★★★★★</div>
-    <p>Super experiență! DJ-ul a făcut atmosferă toată noaptea, invitații nu au stat jos.</p>
-    <div class="name">— Andrei Popescu</div>
-  </div>
-
-  <div class="card">
-    <div class="stars">★★★★★</div>
-    <p>Profesionalism total! Lumini, sunet, totul la nivel foarte ridicat. Recomand!</p>
-    <div class="name">— Maria Ionescu</div>
-  </div>
-
-  <div class="card">
-    <div class="stars">★★★★★</div>
-    <p>Cabina foto a fost hit-ul serii! Organizare impecabilă și echipă foarte ok.</p>
-    <div class="name">— Elena Marin</div>
-  </div>
-
-  <div class="card">
-    <div class="stars">★★★★★</div>
-    <p>Am colaborat pentru nuntă și a fost cea mai bună alegere. Atmosferă de top!</p>
-    <div class="name">— Alex Dumitru</div>
-  </div>
-
-  <div class="card">
-    <div class="stars">★★★★★</div>
-    <p>Totul a fost peste așteptări! De la muzică până la interacțiunea cu invitații.</p>
-    <div class="name">— Bianca Radu</div>
-  </div>
-
-  <div class="card">
-    <div class="stars">★★★★★</div>
-    <p>Seriozitate și calitate. Recomand pentru orice eveniment important.</p>
-    <div class="name">— Cristian Ene</div>
-  </div>
-
+<div class="review">
+  <h4>Alex & Cristina</h4>
+  <div class="stars">★★★★★</div>
+  <p>Profesioniști adevărați! Totul a fost organizat fără stres. Mulțumim pentru o experiență de neuitat!</p>
 </div>
 
 </section>
+
+<!-- CONTACT -->
+<div class="contact-buttons">
+  <a href="tel:0721505739" class="phone">📞 Sună</a>
+  <a href="https://wa.me/40721505739" class="whatsapp">💬 WhatsApp</a>
+</div>
 
 <footer>
 © VIP Events Solutions
