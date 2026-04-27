@@ -6,65 +6,58 @@
 
 <title>Cabină Foto | VIP Events Solutions</title>
 
-<meta name="description" content="Cabină foto pentru nunți și evenimente.">
-
 <style>
-body{
+body {
+  font-family: Arial;
   margin:0;
-  font-family:Arial, sans-serif;
-  background:#fff;
+  background:#0d0d0d;
+  color:#fff;
 }
 
-/* HERO (banner mai mic) */
+/* HERO */
 .hero{
-  height:50vh;
-  background:url("images/banner cabina.jpeg") center/cover no-repeat;
+  height:40vh;
+  background:url("images/banner cabina.jpeg") center/contain no-repeat;
+  background-color:#000;
 }
 
-/* BUTOANE */
+/* BUTTONS */
 .top-buttons{
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  padding:20px;
-  flex-wrap:wrap;
+  text-align:center;
+  padding:25px;
 }
 
 .btn{
-  padding:12px 20px;
+  display:inline-block;
+  margin:6px;
+  padding:10px 18px;
   border-radius:30px;
   text-decoration:none;
-  font-weight:bold;
+  color:#fff;
+  font-size:13px;
+  background:#1a1a1a;
+  border:1px solid #333;
   transition:0.3s;
-  color:white;
-}
-
-.whatsapp{
-  background:#25D366;
-}
-
-.phone{
-  background:#007bff;
-}
-
-.back{
-  background:#444;
 }
 
 .btn:hover{
-  opacity:0.8;
+  background:#333;
 }
+
+.phone { background:#007bff; }
+.whatsapp { background:#25D366; }
+.back { background:#222; }
 
 /* SECTION */
 section{
   max-width:1100px;
   margin:auto;
-  padding:40px 20px;
+  padding:50px 20px;
 }
 
 h2{
   text-align:center;
-  margin-bottom:30px;
+  margin-bottom:25px;
 }
 
 /* CARDS */
@@ -75,9 +68,10 @@ h2{
 }
 
 .card{
-  border-radius:10px;
+  background:#111;
+  border-radius:12px;
   overflow:hidden;
-  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+  border:1px solid #222;
   transition:0.3s;
 }
 
@@ -85,40 +79,41 @@ h2{
   transform:translateY(-5px);
 }
 
+/* IMAGINI FIX */
 .card img{
   width:100%;
-  height:230px;
-  object-fit:cover;
+  height:auto;
+  object-fit:contain;
+  background:#000;
 }
 
 .card-content{
   padding:20px;
+  text-align:center;
 }
 
 .price{
-  font-size:22px;
-  color:#ff4da6;
+  color:#ffcc00;
   font-weight:bold;
 }
 
 /* LIST */
 ul{
   margin-top:15px;
-  padding-left:20px;
+  padding-left:0;
+  list-style:none;
 }
 
 ul li{
-  margin-bottom:6px;
-  font-size:14px;
+  margin-bottom:8px;
+  color:#ccc;
 }
 
 /* FOOTER */
 footer{
-  background:#111;
-  color:#fff;
+  background:#000;
   text-align:center;
   padding:20px;
-  margin-top:40px;
 }
 </style>
 </head>
@@ -131,11 +126,11 @@ footer{
 <!-- BUTOANE -->
 <div class="top-buttons">
   <a href="index.html" class="btn back">⬅ Înapoi</a>
-  <a href="tel:0721505739" class="btn phone">📞 Sună acum</a>
+  <a href="tel:0721505739" class="btn phone">📞 Sună</a>
   <a href="https://wa.me/40721505739" class="btn whatsapp">💬 WhatsApp</a>
 </div>
 
-<!-- PACKAGES -->
+<!-- PACHETE -->
 <section>
 
 <h2>Pachete Cabină Foto</h2>
@@ -143,7 +138,7 @@ footer{
 <div class="pricing">
 
 <div class="card">
-  <img src="images/pachet standard.jpeg" alt="Cabina foto 4 ore">
+  <img src="images/pachet standard.jpeg">
   <div class="card-content">
     <h3>4 ore</h3>
     <p class="price">1300 lei</p>
@@ -155,12 +150,11 @@ footer{
       <li>Plic și magnet la fiecare poză</li>
       <li><strong>Guestbook cadou</strong></li>
     </ul>
-
   </div>
 </div>
 
 <div class="card">
-  <img src="images/pachet premiun.jpeg" alt="Cabina foto 6 ore">
+  <img src="images/pachet premiun.jpeg">
   <div class="card-content">
     <h3>6 ore</h3>
     <p class="price">1600 lei</p>
@@ -172,12 +166,11 @@ footer{
       <li>Plic și magnet la fiecare poză</li>
       <li><strong>Guestbook cadou</strong></li>
     </ul>
-
   </div>
 </div>
 
 <div class="card">
-  <img src="images/pachet platinum.jpeg" alt="Cabina foto 8 ore">
+  <img src="images/pachet platinum.jpeg">
   <div class="card-content">
     <h3>8 ore</h3>
     <p class="price">2000 lei</p>
@@ -189,7 +182,6 @@ footer{
       <li>Plic și magnet la fiecare poză</li>
       <li><strong>Guestbook cadou</strong></li>
     </ul>
-
   </div>
 </div>
 
@@ -198,7 +190,7 @@ footer{
 </section>
 
 <footer>
-© 2026 VIP Events Solutions SRL
+© VIP Events Solutions
 </footer>
 
 </body>
