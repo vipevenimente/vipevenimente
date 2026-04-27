@@ -1,195 +1,175 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Recenzii Clienți | VIP Events Solutions DJ & Evenimente</title>
+<title>Recenzii Clienți | VIP Events Solutions</title>
 
-  <meta name="description" content="Recenzii reale de la clienți VIP Events Solutions. DJ nuntă, cabina foto, atmosferă și momente memorabile.">
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#0d0d0d;
+  color:#fff;
+}
 
-  <meta name="keywords" content="recenzii nunta, dj nunta review, cabina foto recenzii, evenimente feedback">
+/* HERO */
+.hero{
+  padding:60px 20px;
+  text-align:center;
+  background:#000;
+}
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin:0;
-      background:#fff;
-      color:#333;
-    }
+.hero h1{
+  margin:0;
+}
 
-    header {
-      background:#111;
-      color:#fff;
-      text-align:center;
-      padding:50px 20px;
-    }
+.hero p{
+  color:#ccc;
+}
 
-    section {
-      max-width:1000px;
-      margin:auto;
-      padding:30px 20px;
-    }
+/* RATING */
+.rating{
+  font-size:22px;
+  margin:15px 0;
+  color:#ffcc00;
+}
 
-    h2 {
-      text-align:center;
-      margin-bottom:20px;
-    }
+/* BUTTONS */
+.btn{
+  display:inline-block;
+  margin:10px;
+  padding:12px 20px;
+  border-radius:30px;
+  text-decoration:none;
+  color:#fff;
+  background:#333;
+  transition:0.3s;
+}
 
-    /* FORM */
-    .form-box {
-      background:#f6f6f6;
-      padding:20px;
-      border-radius:10px;
-      margin-bottom:40px;
-    }
+.btn:hover{
+  background:#555;
+}
 
-    input, select, textarea {
-      width:100%;
-      padding:10px;
-      margin:8px 0;
-      border:1px solid #ccc;
-      border-radius:5px;
-    }
+.google{
+  background:#4285F4;
+}
 
-    button {
-      background:#111;
-      color:#fff;
-      padding:10px 15px;
-      border:none;
-      border-radius:5px;
-      cursor:pointer;
-    }
+.review{
+  background:#25D366;
+}
 
-    /* REVIEWS */
-    .reviews {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:15px;
-    }
+/* SECTION */
+section{
+  max-width:1000px;
+  margin:auto;
+  padding:40px 20px;
+}
 
-    .card {
-      border:1px solid #eee;
-      border-radius:10px;
-      padding:15px;
-      background:#fafafa;
-    }
+/* REVIEWS */
+.reviews{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+}
 
-    .name {
-      font-weight:bold;
-    }
+.card{
+  background:#111;
+  padding:20px;
+  border-radius:10px;
+  transition:0.3s;
+}
 
-    .stars {
-      color:gold;
-      margin:5px 0;
-    }
+.card:hover{
+  transform:translateY(-5px);
+}
 
-    footer {
-      background:#111;
-      color:#fff;
-      text-align:center;
-      padding:20px;
-      margin-top:40px;
-    }
-  </style>
+.stars{
+  color:#ffcc00;
+  margin-bottom:10px;
+}
+
+.name{
+  font-weight:bold;
+  margin-top:10px;
+  color:#ccc;
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  text-align:center;
+  padding:20px;
+}
+</style>
 </head>
 
 <body>
 
-<header>
+<!-- HERO -->
+<div class="hero">
   <h1>Recenzii Clienți</h1>
-  <p>VIP Events Solutions SRL</p>
-</header>
+  <p>Experiențele celor care au ales VIP Events Solutions</p>
 
-<!-- FORM -->
+  <div class="rating">⭐ 4.9 din 5 (50+ recenzii)</div>
+
+  <a href="https://share.google/v7hGA8hCxTuUtBJQR" target="_blank" class="btn google">
+    ⭐ Vezi recenziile pe Google
+  </a>
+
+  <a href="https://share.google/v7hGA8hCxTuUtBJQR" target="_blank" class="btn review">
+    ✍️ Lasă o recenzie
+  </a>
+</div>
+
+<!-- REVIEWS -->
 <section>
 
-  <h2>Lasă o recenzie</h2>
+<div class="reviews">
 
-  <div class="form-box">
-
-    <form action="mailto:vipeventssolutions2022@gmail.com" method="post" enctype="text/plain">
-
-      <input type="text" name="nume" placeholder="Numele tău" required>
-
-      <select name="serviciu">
-        <option>DJ Nuntă</option>
-        <option>Cabină Foto</option>
-        <option>Foto Video</option>
-        <option>Efecte Speciale</option>
-      </select>
-
-      <textarea name="recenzie" placeholder="Scrie experiența ta..." required></textarea>
-
-      <button type="submit">Trimite recenzia</button>
-
-    </form>
-
+  <div class="card">
+    <div class="stars">★★★★★</div>
+    <p>Super experiență! DJ-ul a făcut atmosferă toată noaptea, invitații nu au stat jos.</p>
+    <div class="name">— Andrei Popescu</div>
   </div>
 
-</section>
-
-<!-- RECENZII -->
-<section>
-
-  <h2>Recenzii clienți</h2>
-
-  <div class="reviews">
-
-    <!-- RECENZII INIȚIALE -->
-    <div class="card"><div class="name">Andreea & Mihai</div><div class="stars">★★★★★</div><p>DJ-ul a fost incredibil, atmosfera perfectă până dimineața!</p></div>
-
-    <div class="card"><div class="name">Ioana P.</div><div class="stars">★★★★★</div><p>Cabina foto a fost atracția serii.</p></div>
-
-    <div class="card"><div class="name">Alex & Cristina</div><div class="stars">★★★★★</div><p>Foto-video foarte profesionist.</p></div>
-
-    <!-- 20 RECENZII NOI -->
-    <div class="card"><div class="name">Andreea & Vlad</div><div class="stars">★★★★★</div><p>DJ-ul a ținut ringul plin toată noaptea.</p></div>
-
-    <div class="card"><div class="name">Mihai Popescu</div><div class="stars">★★★★★</div><p>Mixuri perfecte, fără pauză.</p></div>
-
-    <div class="card"><div class="name">Cristina & Alex</div><div class="stars">★★★★★</div><p>Momente amuzante și energie maximă.</p></div>
-
-    <div class="card"><div class="name">Roxana Ionescu</div><div class="stars">★★★★★</div><p>Atmosferă de club elegant.</p></div>
-
-    <div class="card"><div class="name">George & Elena</div><div class="stars">★★★★★</div><p>Playlist adaptat perfect publicului.</p></div>
-
-    <div class="card"><div class="name">Andrei Stan</div><div class="stars">★★★★★</div><p>Bunica a dansat rock 😂</p></div>
-
-    <div class="card"><div class="name">Ioana & Paul</div><div class="stars">★★★★★</div><p>Ring plin până dimineața.</p></div>
-
-    <div class="card"><div class="name">Larisa Pop</div><div class="stars">★★★★★</div><p>Light show spectaculos.</p></div>
-
-    <div class="card"><div class="name">Florin D.</div><div class="stars">★★★★★</div><p>Cel mai bun DJ ever.</p></div>
-
-    <div class="card"><div class="name">Daniel & Bianca</div><div class="stars">★★★★★</div><p>Moment Macarena epic 😂</p></div>
-
-    <div class="card"><div class="name">Anca Marinescu</div><div class="stars">★★★★★</div><p>De la elegant la party total.</p></div>
-
-    <div class="card"><div class="name">Robert & Diana</div><div class="stars">★★★★★</div><p>Toate generațiile pe ring.</p></div>
-
-    <div class="card"><div class="name">Cătălin V.</div><div class="stars">★★★★★</div><p>Sunet impecabil.</p></div>
-
-    <div class="card"><div class="name">Marius & Alina</div><div class="stars">★★★★★</div><p>Moment surpriză wow 😂</p></div>
-
-    <div class="card"><div class="name">Nicoleta G.</div><div class="stars">★★★★★</div><p>DJ foarte atent la public.</p></div>
-
-    <div class="card"><div class="name">Bogdan I.</div><div class="stars">★★★★★</div><p>Vibe incredibil.</p></div>
-
-    <div class="card"><div class="name">Elena & Sorin</div><div class="stars">★★★★★</div><p>Toată lumea a întrebat de DJ.</p></div>
-
-    <div class="card"><div class="name">Vlad & Oana</div><div class="stars">★★★★★</div><p>Dans în cerc epic 😂</p></div>
-
-    <div class="card"><div class="name">Adrian P.</div><div class="stars">★★★★★</div><p>Sunet de club premium.</p></div>
-
-    <div class="card"><div class="name">Bianca S.</div><div class="stars">★★★★★</div><p>Fără pauze, doar energie.</p></div>
-
+  <div class="card">
+    <div class="stars">★★★★★</div>
+    <p>Profesionalism total! Lumini, sunet, totul la nivel foarte ridicat. Recomand!</p>
+    <div class="name">— Maria Ionescu</div>
   </div>
+
+  <div class="card">
+    <div class="stars">★★★★★</div>
+    <p>Cabina foto a fost hit-ul serii! Organizare impecabilă și echipă foarte ok.</p>
+    <div class="name">— Elena Marin</div>
+  </div>
+
+  <div class="card">
+    <div class="stars">★★★★★</div>
+    <p>Am colaborat pentru nuntă și a fost cea mai bună alegere. Atmosferă de top!</p>
+    <div class="name">— Alex Dumitru</div>
+  </div>
+
+  <div class="card">
+    <div class="stars">★★★★★</div>
+    <p>Totul a fost peste așteptări! De la muzică până la interacțiunea cu invitații.</p>
+    <div class="name">— Bianca Radu</div>
+  </div>
+
+  <div class="card">
+    <div class="stars">★★★★★</div>
+    <p>Seriozitate și calitate. Recomand pentru orice eveniment important.</p>
+    <div class="name">— Cristian Ene</div>
+  </div>
+
+</div>
 
 </section>
 
 <footer>
-  © 2026 VIP Events Solutions SRL
+© VIP Events Solutions
 </footer>
 
 </body>
