@@ -21,35 +21,67 @@ header {
   font-weight:bold;
 }
 
-/* HERO FIXED (CA LA DJ) */
+/* HERO */
 .hero{
   height:40vh;
   background:url("images/banner index nou.png") center/contain no-repeat;
   background-color:#000;
+  position:relative;
+  overflow:hidden;
 }
 
-/* NAV PREMIUM */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to right, #0d0d0d 5%, transparent 25%, transparent 75%, #0d0d0d 95%);
+}
+
+/* NAV BUTTONS */
 .nav {
   text-align:center;
-  padding:25px 10px;
+  padding:30px 10px 10px;
 }
 
 .nav a {
   display:inline-block;
-  margin:6px;
-  padding:10px 18px;
-  background:#1a1a1a;
-  color:#fff;
+  margin:8px;
+  padding:12px 20px;
   text-decoration:none;
   border-radius:30px;
-  font-size:13px;
+  font-size:14px;
+  font-weight:500;
+  color:#fff;
+  background:linear-gradient(145deg, #1a1a1a, #222);
   border:1px solid #333;
+  box-shadow:0 4px 15px rgba(0,0,0,0.4);
   transition:0.3s;
 }
 
 .nav a:hover {
-  background:#2a2a2a;
+  background:linear-gradient(145deg, #2a2a2a, #333);
   border-color:#555;
+  transform:translateY(-2px);
+}
+
+/* HIGHLIGHT DJ */
+.nav a:first-child {
+  background:linear-gradient(145deg, #ff9800, #cc7a00);
+  border:none;
+  color:#000;
+}
+
+/* ABOUT */
+.about{
+  text-align:center;
+  padding:10px 20px 40px;
+}
+
+.about p{
+  max-width:700px;
+  margin:auto;
+  color:#bbb;
+  line-height:1.6;
 }
 
 /* SECTION */
@@ -76,20 +108,27 @@ h2 {
   background:#111;
   border-radius:12px;
   overflow:hidden;
-  transition:0.3s;
   border:1px solid #222;
+  transition:0.3s;
 }
 
 .card:hover {
   transform:translateY(-5px);
 }
 
-/* IMAGE FIX */
-.card img {
-  width:100%;
-  height:auto;
-  object-fit:contain;
+/* FIX IMAGINI + ALINIERE */
+.card-img{
+  height:180px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   background:#000;
+}
+
+.card-img img{
+  max-height:100%;
+  max-width:100%;
+  object-fit:contain;
 }
 
 .card-content {
@@ -137,7 +176,7 @@ footer {
   VIP Events Solutions SRL
 </header>
 
-<!-- BANNER FIX -->
+<!-- HERO -->
 <div class="hero"></div>
 
 <!-- NAV -->
@@ -149,6 +188,14 @@ footer {
   <a href="recenzii.html">Recenzii</a>
 </div>
 
+<!-- ABOUT -->
+<div class="about">
+  <p>
+    <strong>18 ani de experiență în organizarea evenimentelor</strong><br>
+    Oferim servicii complete de DJ, foto-video, cabină foto și efecte speciale, alături de suport în planificarea evenimentului, astfel încât totul să fie organizat perfect și fără stres.
+  </p>
+</div>
+
 <!-- SERVICII -->
 <section>
 
@@ -157,7 +204,9 @@ footer {
 <div class="grid">
 
   <div class="card">
-    <img src="images/DJPAG.jpeg">
+    <div class="card-img">
+      <img src="images/DJPAG.jpeg">
+    </div>
     <div class="card-content">
       <h3>DJ Nuntă</h3>
       <a class="btn" href="dj-nunta.html">Detalii</a>
@@ -165,7 +214,9 @@ footer {
   </div>
 
   <div class="card">
-    <img src="images/activitati-foto-video.png">
+    <div class="card-img">
+      <img src="images/activitati-foto-video.png">
+    </div>
     <div class="card-content">
       <h3>Foto Video</h3>
       <a class="btn" href="foto-video.html">Detalii</a>
@@ -173,7 +224,9 @@ footer {
   </div>
 
   <div class="card">
-    <img src="images/CABANA.jpeg">
+    <div class="card-img">
+      <img src="images/CABANA.jpeg">
+    </div>
     <div class="card-content">
       <h3>Cabină Foto</h3>
       <a class="btn" href="cabina-foto.html">Detalii</a>
@@ -181,7 +234,9 @@ footer {
   </div>
 
   <div class="card">
-    <img src="images/efecte speciale.jpeg">
+    <div class="card-img">
+      <img src="images/efecte speciale.jpeg">
+    </div>
     <div class="card-content">
       <h3>Efecte Speciale</h3>
       <a class="btn" href="efecte-speciale.html">Detalii</a>
