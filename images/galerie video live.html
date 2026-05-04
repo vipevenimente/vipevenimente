@@ -14,41 +14,36 @@ body {
   color:#fff;
 }
 
-/* HERO */
+/* HERO - FIX REAL */
 .hero{
   height:40vh;
-  background:url("images/banner live.png") center/contain no-repeat;
+  background:url("/images/2banner%20live.png") no-repeat center center;
+  background-size:contain;
   background-color:#000;
 }
 
-/* NAV */
-.nav {
+/* BACK BUTTON - FIX VIZIBIL */
+.back{
   text-align:center;
-  padding:25px 10px 10px;
+  margin:20px 0;
 }
 
-.nav a {
+.back a{
   display:inline-block;
-  margin:8px;
-  padding:12px 20px;
+  padding:12px 22px;
+  background:#222;
   border-radius:30px;
   text-decoration:none;
   color:#fff;
-  background:linear-gradient(145deg,#1a1a1a,#222);
-  border:1px solid #333;
-}
-
-.nav a:nth-child(2){
-  background:linear-gradient(145deg,#ff9800,#cc7a00);
-  color:#000;
-  border:none;
+  border:1px solid #444;
+  font-weight:bold;
 }
 
 /* SECTION */
 section{
   max-width:1100px;
   margin:auto;
-  padding:50px 20px;
+  padding:40px 20px;
 }
 
 h2{
@@ -63,13 +58,11 @@ h2{
   gap:20px;
 }
 
-/* VIDEO CARD */
 .video-card{
   background:#111;
   border-radius:12px;
-  overflow:hidden;
-  border:1px solid #222;
   padding:15px;
+  border:1px solid #222;
 }
 
 .video-card iframe{
@@ -116,14 +109,9 @@ footer{
 <!-- BANNER -->
 <div class="hero"></div>
 
-<!-- NAV -->
-<div class="nav">
-  <a href="../index.html">🏠 Home</a>
-  <a href="../dj-nunta.html">DJ Nuntă</a>
-  <a href="../foto-video.html">Foto Video</a>
-  <a href="../cabina-foto.html">Cabină Foto</a>
-  <a href="../efecte-speciale.html">Efecte</a>
-  <a href="../recenzii.html">Recenzii</a>
+<!-- BACK BUTTON -->
+<div class="back">
+  <a href="/Live.html">⬅ Înapoi la pagina Live</a>
 </div>
 
 <!-- VIDEO -->
@@ -148,7 +136,6 @@ footer{
 </div>
 
 </div>
-
 </section>
 
 <!-- CONTACT -->
