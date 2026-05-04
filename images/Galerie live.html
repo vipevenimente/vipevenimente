@@ -14,39 +14,36 @@ body {
   color:#fff;
 }
 
-/* HERO - FIX CORECT */
+/* HERO - FIX REAL */
 .hero{
   height:40vh;
-  background:url("2banner live.png") center/contain no-repeat;
+  background:url("/images/2banner%20live.png") no-repeat center center;
+  background-size:contain;
   background-color:#000;
 }
 
-/* BACK BUTTON */
+/* BACK BUTTON - FIX VIZIBIL */
 .back{
   text-align:center;
-  margin-top:20px;
+  margin:20px 0;
 }
 
 .back a{
   display:inline-block;
   padding:12px 22px;
-  background:linear-gradient(145deg,#1a1a1a,#222);
+  background:#222;
   border-radius:30px;
   text-decoration:none;
   color:#fff;
-  border:1px solid #333;
-  transition:0.3s;
-}
-
-.back a:hover{
-  background:#333;
+  border:1px solid #444;
+  font-weight:bold;
 }
 
 /* SECTION */
 section{
   max-width:1100px;
   margin:auto;
-  padding:50px 20px;
+  padding:40px 20px;
 }
 
 h2{
@@ -61,17 +58,11 @@ h2{
   gap:20px;
 }
 
-/* VIDEO CARD */
 .video-card{
   background:#111;
   border-radius:12px;
   padding:15px;
   border:1px solid #222;
-  transition:0.3s;
-}
-
-.video-card:hover{
-  transform:translateY(-5px);
 }
 
 .video-card iframe{
@@ -118,9 +109,9 @@ footer{
 <!-- BANNER -->
 <div class="hero"></div>
 
-<!-- BACK -->
+<!-- BACK BUTTON -->
 <div class="back">
-  <a href="../Live.html">⬅ Înapoi la Live</a>
+  <a href="/Live.html">⬅ Înapoi la pagina Live</a>
 </div>
 
 <!-- VIDEO -->
