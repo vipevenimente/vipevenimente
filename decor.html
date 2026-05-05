@@ -50,7 +50,7 @@ h2{
   margin-bottom:20px;
 }
 
-/* GRID IMAGINI */
+/* GRID UNIFORM */
 .img-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -60,18 +60,45 @@ h2{
 
 .img-grid img{
   width:100%;
-  height:220px;
+  height:230px;
   object-fit:cover;
   border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
 }
 
-/* CARD TEXT */
+.img-grid img:hover{
+  transform:scale(1.05);
+}
+
+/* TEXT */
 .desc{
   text-align:center;
   color:#bbb;
   max-width:800px;
   margin:auto;
   line-height:1.6;
+}
+
+/* LIGHTBOX */
+.lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.95);
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
+}
+
+.lightbox.active{
+  display:flex;
 }
 
 /* CONTACT */
@@ -103,10 +130,8 @@ footer{
 
 <body>
 
-<!-- BANNER -->
 <div class="hero"></div>
 
-<!-- NAV -->
 <div class="nav">
   <a href="index.html">🏠 Home</a>
   <a href="dj-nunta.html">DJ Nuntă</a>
@@ -123,10 +148,10 @@ footer{
 <h2>Decor Botez</h2>
 
 <div class="img-grid">
-  <img src="images/decor baiat 1.jpeg">
-  <img src="images/decor baiat 2.jpeg">
-  <img src="images/decor fata 1.jpeg">
-  <img src="images/decor fata 2.jpeg">
+  <img src="images/decor baiat 1.jpeg" onclick="openImg(this.src)">
+  <img src="images/decor baiat 2.jpeg" onclick="openImg(this.src)">
+  <img src="images/decor fata 1.jpeg" onclick="openImg(this.src)">
+  <img src="images/decor fata 2.jpeg" onclick="openImg(this.src)">
 </div>
 
 <div class="desc">
@@ -139,7 +164,7 @@ Decor botez – prețul pornește de la <strong>1700 lei</strong> și include pa
 <h2>Decor Majorat</h2>
 
 <div class="img-grid">
-  <img src="images/decor majorat.jpeg">
+  <img src="images/decor majorat.jpeg" onclick="openImg(this.src)">
 </div>
 
 <div class="desc">
@@ -147,18 +172,23 @@ Decor majorat – include panou foto, 10 aranjamente mese și 50 baloane heliu p
 </div>
 </section>
 
-<!-- GENDER REVEAL -->
+<!-- GENDER -->
 <section>
 <h2>Gender Reveal Party</h2>
 
 <div class="img-grid">
-  <img src="images/gender.jpeg">
+  <img src="images/gender.jpeg" onclick="openImg(this.src)">
 </div>
 
 <div class="desc">
 Gender reveal party – include panou foto și cutie gender reveal cu 30 baloane heliu. Prețuri începând de la <strong>1000 lei</strong>.
 </div>
 </section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeImg()">
+  <img id="lightbox-img">
+</div>
 
 <!-- CONTACT -->
 <div class="contact-buttons">
@@ -169,6 +199,17 @@ Gender reveal party – include panou foto și cutie gender reveal cu 30 baloane
 <footer>
 © VIP Events Solutions
 </footer>
+
+<script>
+function openImg(src){
+  document.getElementById("lightbox-img").src = src;
+  document.getElementById("lightbox").classList.add("active");
+}
+
+function closeImg(){
+  document.getElementById("lightbox").classList.remove("active");
+}
+</script>
 
 </body>
 </html>
