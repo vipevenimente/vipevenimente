@@ -7,85 +7,70 @@
 <title>Decoruri | VIP Events Solutions</title>
 
 <style>
-body {
-  font-family: Arial;
+body{
+  font-family:Arial;
   margin:0;
   background:#0d0d0d;
   color:#fff;
 }
 
-/* HERO */
 .hero{
   height:40vh;
-  background:url("images/banner decor.jpeg") center/contain no-repeat;
+  background:url("images/banner%20decor.jpeg") center/contain no-repeat;
   background-color:#000;
 }
 
-/* NAV */
-.nav {
+.nav{
   text-align:center;
-  padding:25px 10px 10px;
+  padding:25px;
 }
 
-.nav a {
+.nav a{
   display:inline-block;
   margin:8px;
   padding:12px 20px;
   border-radius:30px;
   text-decoration:none;
   color:#fff;
-  background:linear-gradient(145deg,#1a1a1a,#222);
+  background:#1a1a1a;
   border:1px solid #333;
 }
 
-/* SECTION */
 section{
   max-width:1100px;
   margin:auto;
-  padding:50px 20px;
+  padding:40px 20px;
 }
 
 h2{
   text-align:center;
-  margin-bottom:10px;
 }
 
-.sub-title{
+.sub{
   text-align:center;
   color:#ffcc00;
   margin:20px 0 10px;
 }
 
-/* GRID */
 .img-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
-  margin-bottom:20px;
 }
 
-/* IMAGINI UNIFORME */
 .img-grid img{
   width:100%;
   height:230px;
   object-fit:cover;
   border-radius:10px;
   cursor:pointer;
-  transition:0.3s;
 }
 
-.img-grid img:hover{
-  transform:scale(1.05);
-}
-
-/* TEXT */
 .desc{
   text-align:center;
   color:#bbb;
+  margin:20px auto;
   max-width:800px;
-  margin:auto;
-  line-height:1.6;
-  margin-bottom:30px;
 }
 
 /* LIGHTBOX */
@@ -93,45 +78,18 @@ h2{
   display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.95);
+  background:black;
   justify-content:center;
   align-items:center;
-  z-index:999;
 }
 
 .lightbox img{
   max-width:90%;
   max-height:90%;
-  border-radius:10px;
 }
 
 .lightbox.active{
   display:flex;
-}
-
-/* CONTACT */
-.contact-buttons{
-  text-align:center;
-  padding:30px;
-}
-
-.contact-buttons a{
-  display:inline-block;
-  margin:8px;
-  padding:12px 20px;
-  border-radius:30px;
-  text-decoration:none;
-  color:#fff;
-}
-
-.phone { background:#007bff; }
-.whatsapp { background:#25D366; }
-
-/* FOOTER */
-footer{
-  background:#000;
-  text-align:center;
-  padding:20px;
 }
 </style>
 </head>
@@ -141,26 +99,17 @@ footer{
 <div class="hero"></div>
 
 <div class="nav">
-  <a href="index.html">🏠 Home</a>
-  <a href="dj-nunta.html">DJ Nuntă</a>
-  <a href="Live.html">Band Live</a>
-  <a href="foto-video.html">Foto Video</a>
-  <a href="cabina-foto.html">Cabină Foto</a>
-  <a href="efecte-speciale.html">Efecte</a>
-  <a href="recenzii.html">Recenzii</a>
-  <a href="images/colaboratori.html">Colaboratori</a>
+  <a href="index.html">Home</a>
 </div>
 
-<!-- BOTEZ -->
 <section>
+
 <h2>Decor Botez</h2>
 
-<!-- BAIAT -->
-<div class="sub-title">Botez Băiat</div>
-
+<div class="sub">Botez Băiat</div>
 <div class="img-grid">
-  <img src="images/decor baiat 1.jpeg" onclick="openImg(this.src)">
-  <img src="images/decor baiat 2.jpeg" onclick="openImg(this.src)">
+  <img src="images/decor%20baiat%201.jpeg" onclick="openImg(this.src)">
+  <img src="images/decor%20baiat%202.jpeg" onclick="openImg(this.src)">
 </div>
 
 <div class="desc">
@@ -168,66 +117,45 @@ Decor botez băiat – include panou foto, 10 aranjamente masă, aranjament cris
 <strong>Prețul pornește de la 1700 lei</strong>
 </div>
 
-<!-- FATA -->
-<div class="sub-title">Botez Fată</div>
-
+<div class="sub">Botez Fată</div>
 <div class="img-grid">
-  <img src="images/decor fata 1.jpeg" onclick="openImg(this.src)">
-  <img src="images/decor fata 2.jpeg" onclick="openImg(this.src)">
+  <img src="images/decor%20fata%201.jpeg" onclick="openImg(this.src)">
+  <img src="images/decor%20fata%202.jpeg" onclick="openImg(this.src)">
 </div>
 
 <div class="desc">
 Decor botez fată – include panou foto, 10 aranjamente masă, aranjament cristelniță și intrare biserică.
 </div>
 
-</section>
-
-<!-- MAJORAT -->
-<section>
 <h2>Decor Majorat</h2>
-
 <div class="img-grid">
-  <img src="images/decor majorat.jpeg" onclick="openImg(this.src)">
+  <img src="images/decor%20majorat.jpeg" onclick="openImg(this.src)">
 </div>
 
 <div class="desc">
 Decor majorat – include panou foto, 10 aranjamente mese și 50 baloane heliu personalizate.  
-<strong>Prețuri începând de la 1200 lei</strong>
+<strong>De la 1200 lei</strong>
 </div>
-</section>
 
-<!-- GENDER -->
-<section>
-<h2>Gender Reveal Party</h2>
-
+<h2>Gender Reveal</h2>
 <div class="img-grid">
   <img src="images/gender.jpeg" onclick="openImg(this.src)">
 </div>
 
 <div class="desc">
-Gender reveal party – include panou foto și cutie gender reveal cu 30 baloane heliu.  
-<strong>Prețuri începând de la 1000 lei</strong>
+Gender reveal – panou foto + cutie cu 30 baloane heliu.  
+<strong>De la 1000 lei</strong>
 </div>
+
 </section>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeImg()">
-  <img id="lightbox-img">
+  <img id="imgBox">
 </div>
-
-<!-- CONTACT -->
-<div class="contact-buttons">
-  <a href="tel:0721505739" class="phone">📞 Sună</a>
-  <a href="https://wa.me/40721505739" class="whatsapp">💬 WhatsApp</a>
-</div>
-
-<footer>
-© VIP Events Solutions
-</footer>
 
 <script>
 function openImg(src){
-  document.getElementById("lightbox-img").src = src;
+  document.getElementById("imgBox").src = src;
   document.getElementById("lightbox").classList.add("active");
 }
 
