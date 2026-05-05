@@ -14,15 +14,15 @@ body {
   color:#fff;
 }
 
-/* HERO - FIX REAL */
+/* HERO */
 .hero{
   height:40vh;
-  background:url("/images/2banner%20live.png") no-repeat center center;
+  background:url("/images/2banner%20live.png") no-repeat center;
   background-size:contain;
   background-color:#000;
 }
 
-/* BACK BUTTON - FIX VIZIBIL */
+/* BACK */
 .back{
   text-align:center;
   margin:20px 0;
@@ -35,8 +35,6 @@ body {
   border-radius:30px;
   text-decoration:none;
   color:#fff;
-  border:1px solid #444;
-  font-weight:bold;
 }
 
 /* SECTION */
@@ -48,16 +46,31 @@ section{
 
 h2{
   text-align:center;
-  margin-bottom:30px;
+  margin-bottom:10px;
 }
 
-/* VIDEO GRID */
+.subtitle{
+  text-align:center;
+  color:#bbb;
+  margin-bottom:25px;
+}
+
+/* GRID */
 .video-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
   gap:20px;
 }
 
+/* SHORTS GRID */
+.shorts-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+  justify-content:center;
+}
+
+/* CARD */
 .video-card{
   background:#111;
   border-radius:12px;
@@ -72,9 +85,8 @@ h2{
   border-radius:8px;
 }
 
-.video-card h3{
-  text-align:center;
-  margin-top:10px;
+.shorts iframe{
+  height:350px;
 }
 
 /* CONTACT */
@@ -95,7 +107,6 @@ h2{
 .phone { background:#007bff; }
 .whatsapp { background:#25D366; }
 
-/* FOOTER */
 footer{
   background:#000;
   text-align:center;
@@ -106,15 +117,31 @@ footer{
 
 <body>
 
-<!-- BANNER -->
 <div class="hero"></div>
 
-<!-- BACK BUTTON -->
 <div class="back">
-  <a href="/Live.html">⬅ Înapoi la pagina Live</a>
+  <a href="/Live.html">⬅ Înapoi la Live</a>
 </div>
 
-<!-- VIDEO -->
+<!-- SHORTS -->
+<section>
+<h2>Short Clips</h2>
+<div class="subtitle">Emoție în câteva secunde</div>
+
+<div class="shorts-grid">
+
+<div class="video-card shorts">
+  <iframe src="https://www.youtube.com/embed/nunR-apU_As" allowfullscreen></iframe>
+</div>
+
+<div class="video-card shorts">
+  <iframe src="https://www.youtube.com/embed/8uGkK2ncmFk" allowfullscreen></iframe>
+</div>
+
+</div>
+</section>
+
+<!-- VIDEO MARI -->
 <section>
 <h2>Galerie Video Live Band</h2>
 
@@ -122,23 +149,19 @@ footer{
 
 <div class="video-card">
   <iframe src="https://www.youtube.com/embed/dr73riYxIsk" allowfullscreen></iframe>
-  <h3>Folclor</h3>
 </div>
 
 <div class="video-card">
   <iframe src="https://www.youtube.com/embed/TUgdJpds8W0" allowfullscreen></iframe>
-  <h3>Internațional</h3>
 </div>
 
 <div class="video-card">
   <iframe src="https://www.youtube.com/embed/gP6WPJKx2mQ" allowfullscreen></iframe>
-  <h3>Balcanic</h3>
 </div>
 
 </div>
 </section>
 
-<!-- CONTACT -->
 <div class="contact-buttons">
   <a href="tel:0721505739" class="phone">📞 Sună</a>
   <a href="https://wa.me/40721505739" class="whatsapp">💬 WhatsApp</a>
