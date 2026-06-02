@@ -47,7 +47,7 @@ section {
   padding:40px 20px;
 }
 
-.contact-box {
+.box {
   background:#111;
   padding:25px;
   border-radius:12px;
@@ -61,6 +61,12 @@ input, textarea {
   margin-bottom:15px;
   border-radius:8px;
   border:none;
+  outline:none;
+}
+
+textarea {
+  min-height:140px;
+  resize:vertical;
 }
 
 button {
@@ -75,6 +81,18 @@ button {
 
 button:hover {
   background:#cc7a00;
+}
+
+/* mesaj succes */
+.success {
+  display:none;
+  text-align:center;
+  background:#1a1a1a;
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:20px;
+  border:1px solid #333;
+  color:#4caf50;
 }
 </style>
 </head>
@@ -100,20 +118,31 @@ button:hover {
 
 <section>
 
-<div class="contact-box">
+<div class="box">
 
   <h2>Trimite-ne un mesaj</h2>
 
-  <!-- FORMULAR -->
-  <form action="contact.php" method="POST">
+  <!-- mesaj succes (bonus) -->
+  <div id="success" class="success">
+    ✔ Mesaj trimis cu succes! Îți răspundem în cel mai scurt timp.
+  </div>
+
+  <!-- FORMULAR FORMSPREE -->
+  <form id="contactForm" action="https://formspree.io/f/mbdbnpap" method="POST">
 
     <input type="text" name="nume" placeholder="Nume și prenume" required>
 
-    <input type="email" name="email" placeholder="Email" required>
+    <input type="email" name="email" placeholder="Adresa de email" required>
 
-    <input type="tel" name="telefon" placeholder="Telefon">
+    <input type="tel" name="telefon" placeholder="Număr de telefon">
 
     <textarea name="mesaj" placeholder="Mesajul tău..." required></textarea>
+
+    <!-- BONUS anti-spam (honeypot) -->
+    <input type="text" name="_gotcha" style="display:none">
+
+    <!-- redirect după trimitere (BONUS) -->
+    <input type="hidden" name="_redirect" value="https://vipevenimente.ro/contact.html">
 
     <button type="submit">Trimite mesaj</button>
 
@@ -122,6 +151,13 @@ button:hover {
 </div>
 
 </section>
+
+<!-- BONUS SCRIPT: afișează mesaj fără refresh -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(){
+    document.getElementById("success").style.display = "block";
+});
+</script>
 
 </body>
 </html>
