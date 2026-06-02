@@ -19,6 +19,7 @@ header {
   padding:20px;
 }
 
+/* NAV */
 .nav {
   text-align:center;
   padding:20px;
@@ -41,12 +42,20 @@ header {
   border:none;
 }
 
+/* LAYOUT */
 section {
-  max-width:900px;
+  max-width:1000px;
   margin:auto;
   padding:40px 20px;
 }
 
+.grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+/* BOX */
 .box {
   background:#111;
   padding:25px;
@@ -54,6 +63,7 @@ section {
   border:1px solid #222;
 }
 
+/* INPUT */
 input, textarea {
   width:100%;
   padding:12px;
@@ -69,6 +79,7 @@ textarea {
   resize:vertical;
 }
 
+/* BUTTON */
 button {
   background:#ff9800;
   color:#000;
@@ -83,16 +94,33 @@ button:hover {
   background:#cc7a00;
 }
 
-/* mesaj succes */
+/* CONTACT INFO */
+.info p {
+  margin:10px 0;
+  color:#bbb;
+}
+
+.info strong {
+  color:#fff;
+}
+
+/* SUCCESS */
 .success {
   display:none;
   text-align:center;
   background:#1a1a1a;
-  padding:20px;
+  padding:15px;
   border-radius:12px;
-  margin-bottom:20px;
+  margin-bottom:15px;
   border:1px solid #333;
   color:#4caf50;
+}
+
+/* RESPONSIVE */
+@media(max-width:800px){
+  .grid{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -118,41 +146,60 @@ button:hover {
 
 <section>
 
-<div class="box">
+<div class="grid">
 
-  <h2>Trimite-ne un mesaj</h2>
+  <!-- CONTACT INFO -->
+  <div class="box info">
+    <h2>Date de contact</h2>
 
-  <!-- mesaj succes (bonus) -->
-  <div id="success" class="success">
-    ✔ Mesaj trimis cu succes! Îți răspundem în cel mai scurt timp.
+    <p><strong>Telefon:</strong><br>
+    <a href="tel:0721505739" style="color:#ff9800;">0721 505 739</a></p>
+
+    <p><strong>Email:</strong><br>
+    <a href="mailto:vipeventssolutions2022@gmail.com" style="color:#ff9800;">
+      vipeventssolutions2022@gmail.com
+    </a></p>
+
+    <p><strong>Program:</strong><br>
+    Non-stop pentru evenimente</p>
+
+    <p><strong>Servicii:</strong><br>
+    DJ • Band Live • Foto Video • Cabină Foto • Efecte Speciale</p>
   </div>
 
-  <!-- FORMULAR FORMSPREE -->
-  <form id="contactForm" action="https://formspree.io/f/mbdbnpap" method="POST">
+  <!-- FORMULAR -->
+  <div class="box">
 
-    <input type="text" name="nume" placeholder="Nume și prenume" required>
+    <h2>Trimite-ne un mesaj</h2>
 
-    <input type="email" name="email" placeholder="Adresa de email" required>
+    <div id="success" class="success">
+      ✔ Mesaj trimis cu succes!
+    </div>
 
-    <input type="tel" name="telefon" placeholder="Număr de telefon">
+    <form id="contactForm" action="https://formspree.io/f/mbdbnpap" method="POST">
 
-    <textarea name="mesaj" placeholder="Mesajul tău..." required></textarea>
+      <input type="text" name="nume" placeholder="Nume și prenume" required>
 
-    <!-- BONUS anti-spam (honeypot) -->
-    <input type="text" name="_gotcha" style="display:none">
+      <input type="email" name="email" placeholder="Email" required>
 
-    <!-- redirect după trimitere (BONUS) -->
-    <input type="hidden" name="_redirect" value="https://vipevenimente.ro/contact.html">
+      <input type="tel" name="telefon" placeholder="Telefon">
 
-    <button type="submit">Trimite mesaj</button>
+      <textarea name="mesaj" placeholder="Mesajul tău..." required></textarea>
 
-  </form>
+      <!-- anti-spam -->
+      <input type="text" name="_gotcha" style="display:none">
+
+      <button type="submit">Trimite mesaj</button>
+
+    </form>
+
+  </div>
 
 </div>
 
 </section>
 
-<!-- BONUS SCRIPT: afișează mesaj fără refresh -->
+<!-- SCRIPT SUCCESS -->
 <script>
 document.getElementById("contactForm").addEventListener("submit", function(){
     document.getElementById("success").style.display = "block";
