@@ -1,0 +1,293 @@
+```html
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | VIP Events Solutions</title>
+
+    <meta name="description" content="Contactează VIP Events Solutions pentru DJ, Foto Video, Cabină Foto, Muzică Live și Efecte Speciale pentru evenimentul tău.">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial,Helvetica,sans-serif;
+            line-height:1.6;
+            color:#333;
+            background:#fff;
+        }
+
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:auto;
+        }
+
+        .hero{
+            background:#111;
+            color:#fff;
+            text-align:center;
+            padding:100px 20px;
+        }
+
+        .hero h1{
+            font-size:48px;
+            margin-bottom:20px;
+        }
+
+        .hero p{
+            max-width:700px;
+            margin:auto;
+            font-size:18px;
+            opacity:.9;
+        }
+
+        .contact-section{
+            padding:80px 0;
+        }
+
+        .contact-grid{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:40px;
+        }
+
+        .contact-card{
+            background:#fff;
+            padding:40px;
+            border-radius:12px;
+            box-shadow:0 5px 20px rgba(0,0,0,.08);
+        }
+
+        .contact-card h2{
+            margin-bottom:25px;
+            color:#111;
+        }
+
+        .contact-item{
+            margin-bottom:20px;
+        }
+
+        .contact-item strong{
+            display:block;
+            margin-bottom:5px;
+        }
+
+        .contact-item a{
+            color:#d4af37;
+            text-decoration:none;
+            font-weight:600;
+        }
+
+        .contact-item a:hover{
+            text-decoration:underline;
+        }
+
+        form{
+            display:flex;
+            flex-direction:column;
+            gap:15px;
+        }
+
+        input,
+        textarea{
+            width:100%;
+            padding:14px;
+            border:1px solid #ddd;
+            border-radius:6px;
+            font-size:16px;
+        }
+
+        textarea{
+            min-height:160px;
+            resize:vertical;
+        }
+
+        button{
+            background:#d4af37;
+            color:#fff;
+            border:none;
+            padding:15px;
+            border-radius:6px;
+            cursor:pointer;
+            font-size:16px;
+            font-weight:bold;
+        }
+
+        button:hover{
+            background:#be9925;
+        }
+
+        .cta{
+            background:#f7f7f7;
+            text-align:center;
+            padding:70px 20px;
+        }
+
+        .cta h2{
+            margin-bottom:15px;
+            font-size:36px;
+        }
+
+        .buttons{
+            display:flex;
+            justify-content:center;
+            gap:15px;
+            margin-top:25px;
+            flex-wrap:wrap;
+        }
+
+        .btn{
+            display:inline-block;
+            text-decoration:none;
+            padding:14px 28px;
+            border-radius:6px;
+            color:#fff;
+            font-weight:bold;
+        }
+
+        .btn-phone{
+            background:#d4af37;
+        }
+
+        .btn-whatsapp{
+            background:#25D366;
+        }
+
+        @media(max-width:768px){
+
+            .hero h1{
+                font-size:34px;
+            }
+
+            .contact-grid{
+                grid-template-columns:1fr;
+            }
+
+            .contact-card{
+                padding:25px;
+            }
+
+            .cta h2{
+                font-size:28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <div class="container">
+        <h1>Contact</h1>
+        <p>
+            Suntem aici pentru a transforma evenimentul tău într-o experiență memorabilă.
+            Contactează-ne pentru ofertă personalizată și disponibilitate.
+        </p>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="container">
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+
+                <h2>Date de contact</h2>
+
+                <div class="contact-item">
+                    <strong>Telefon</strong>
+                    <a href="tel:0721505739">0721 505 739</a>
+                </div>
+
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <a href="mailto:vipeventssolutions2022@gmail.com">
+                        vipeventssolutions2022@gmail.com
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <strong>Servicii</strong>
+                    DJ • Foto Video • Cabină Foto • Muzică Live • Efecte Speciale
+                </div>
+
+            </div>
+
+            <div class="contact-card">
+
+                <h2>Trimite-ne un mesaj</h2>
+
+                <form action="contact.php" method="post">
+
+                    <input
+                        type="text"
+                        name="nume"
+                        placeholder="Nume și prenume"
+                        required
+                    >
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Adresa de email"
+                        required
+                    >
+
+                    <input
+                        type="tel"
+                        name="telefon"
+                        placeholder="Număr de telefon"
+                    >
+
+                    <textarea
+                        name="mesaj"
+                        placeholder="Spune-ne mai multe despre evenimentul tău..."
+                        required
+                    ></textarea>
+
+                    <button type="submit">
+                        Trimite mesajul
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container">
+
+        <h2>Solicită o ofertă personalizată</h2>
+
+        <p>
+            Răspundem rapid și îți oferim cea mai bună soluție pentru evenimentul tău.
+        </p>
+
+        <div class="buttons">
+
+            <a href="tel:0721505739" class="btn btn-phone">
+                📞 Sună acum
+            </a>
+
+            <a href="https://wa.me/40721505739" class="btn btn-whatsapp">
+                💬 WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>
+```
